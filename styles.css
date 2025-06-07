@@ -1,22 +1,39 @@
-/* Base styles */
+/* Base styles - MAXIMUM 90s OVERLOAD */
 :root {
-    --primary-color: #e59e05;
-    --accent-color: #4ECDC4;
+    --primary-color: #FF00FF;
+    --accent-color: #00FFFF;
     --text-color: #000000;
     --background-color: #FFFFFF;
-    --retro-gradient: linear-gradient(45deg, #c59c06, #0b52d6);
-    --neon-shadow: 0 0 5px #4ECDC4, 0 0 10px #4ECDC4, 0 0 15px #4ECDC4;
-    --starry-bg: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M10 0l1 7h7l-6 5 3 7-5-4-5 4 3-7-6-5h7l1-7z' fill='rgba(78, 205, 196, 0.1)'/%3E%3C/svg%3E");
+    --neon-pink: #FF1493;
+    --neon-green: #00FF00;
+    --neon-yellow: #FFFF00;
+    --cyber-blue: #0080FF;
+    --retro-gradient: linear-gradient(45deg, #FF00FF, #00FFFF, #FFFF00, #FF1493);
+    --rainbow-gradient: linear-gradient(45deg, #ff0000, #ff8000, #ffff00, #80ff00, #00ff00, #00ff80, #00ffff, #0080ff, #0000ff, #8000ff, #ff0080);
+    --neon-shadow: 0 0 5px #00FFFF, 0 0 10px #00FFFF, 0 0 15px #00FFFF, 0 0 20px #00FFFF;
+    --mega-shadow: 0 0 10px #FF00FF, 0 0 20px #FF00FF, 0 0 30px #FF00FF, 0 0 40px #FF00FF;
+    --starry-bg: url("data:image/svg+xml,%3Csvg width='40' height='40' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0l2 14h14l-12 10 6 14-10-8-10 8 6-14-12-10h14l2-14z' fill='rgba(255, 20, 147, 0.3)'/%3E%3Ccircle cx='10' cy='10' r='1' fill='%2300FFFF'/%3E%3Ccircle cx='30' cy='30' r='1' fill='%23FFFF00'/%3E%3C/svg%3E");
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Courier New", Courier, monospace; 
+    font-family: "Comic Sans MS", "Comic Sans", cursive !important;
     line-height: 1.6;
     color: var(--text-color);
-    background: #FFF var(--starry-bg) repeat;
-    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='6' fill='%23de7906' stroke='black'/%3E%3C/svg%3E"), auto;
+    background: #000 var(--starry-bg) repeat, 
+                repeating-linear-gradient(45deg, 
+                    transparent 0px, transparent 10px,
+                    rgba(255, 0, 255, 0.1) 10px, rgba(255, 0, 255, 0.1) 20px,
+                    transparent 20px, transparent 30px,
+                    rgba(0, 255, 255, 0.1) 30px, rgba(0, 255, 255, 0.1) 40px);
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 0l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z' fill='%23FF00FF'/%3E%3C/svg%3E"), auto;
+    animation: bodyPulse 3s infinite alternate;
+}
+
+@keyframes bodyPulse {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
 }
 
 .container {
@@ -24,135 +41,300 @@ body {
     margin: 0 auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #000;
-    outline: 2px solid #4ECDC4;
-    outline-offset: -8px;
+    border: 4px groove #FF00FF;
+    outline: 4px ridge #00FFFF;
+    outline-offset: -12px;
+    box-shadow: 0 0 30px #FF00FF, inset 0 0 30px rgba(0, 255, 255, 0.3);
+    position: relative;
 }
 
-/* Header styles */
+.container::before {
+    content: "★ WELCOME TO THE CYBER GALLERY ★";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--rainbow-gradient);
+    color: #000;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 12px;
+    border: 2px solid #000;
+    animation: rainbowPulse 2s infinite;
+    z-index: 1000;
+}
+
+@keyframes rainbowPulse {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.1); }
+}
+
+/* Header styles - MAXIMUM IMPACT */
 .header {
     text-align: center;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
-    background: var(--retro-gradient);
-    border: 3px solid #000;
-    box-shadow: 5px 5px 0 #000;
+    background: var(--rainbow-gradient);
+    border: 5px outset #FF00FF;
+    box-shadow: var(--mega-shadow), inset 0 0 20px rgba(255, 255, 255, 0.5);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 100%; }
 }
 
 .header h1 {
     margin: 0;
-    font-size: 2.5rem;
-    letter-spacing: 2px;
+    font-size: 3rem;
+    letter-spacing: 3px;
     text-transform: uppercase;
-    color: #FFF;
-    text-shadow: 3px 3px 0 #000;
-    background: linear-gradient(45deg, #de7906, #4ECDC4);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #000;
+    text-shadow: 2px 2px 0 #FFFF00, 4px 4px 0 #FF00FF, 6px 6px 0 #00FFFF;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+    animation: textDance 2s infinite alternate, colorCycle 4s infinite;
+    position: relative;
+    z-index: 2;
+}
+
+@keyframes textDance {
+    0% { transform: rotate(-2deg) scale(1); }
+    25% { transform: rotate(2deg) scale(1.05); }
+    50% { transform: rotate(-1deg) scale(1); }
+    75% { transform: rotate(1deg) scale(1.05); }
+    100% { transform: rotate(-2deg) scale(1); }
+}
+
+@keyframes colorCycle {
+    0% { color: #FF00FF; }
+    25% { color: #00FFFF; }
+    50% { color: #FFFF00; }
+    75% { color: #00FF00; }
+    100% { color: #FF00FF; }
 }
 
 .subtitle {
     margin: 10px 0 0;
-    font-size: 1.2rem;
-    opacity: 0.9;
+    font-size: 1.4rem;
+    color: #000;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #FFFF00, 2px 2px 0 #FF00FF;
+    animation: marqueeText 8s linear infinite;
+    position: relative;
+    z-index: 2;
 }
 
-/* Navigation styles */
+@keyframes marqueeText {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Navigation styles - CYBER BUTTONS */
 .navigation {
     text-align: center;
     margin-bottom: 2rem;
+    background: repeating-linear-gradient(
+        90deg,
+        #FF00FF 0px, #FF00FF 20px,
+        #00FFFF 20px, #00FFFF 40px
+    );
+    padding: 1rem;
+    border: 3px double #000;
 }
 
 .nav-button {
     display: inline-block;
-    padding: 12px 24px;
-    margin: 5px;
-    background: repeating-linear-gradient(
-        45deg,
-        #de7906,
-        #de7906 10px,
-        #c56a05 10px,
-        #c56a05 20px
-    );
-    color: white;
+    padding: 15px 30px;
+    margin: 8px;
+    background: linear-gradient(45deg, #FF00FF, #00FFFF, #FFFF00);
+    color: #000;
     text-decoration: none;
-    border: 2px solid #000;
-    box-shadow: 3px 3px 0 #000;
+    border: 3px outset #FFFF00;
+    box-shadow: var(--neon-shadow);
     transition: all 0.1s ease;
     font-weight: bold;
     text-transform: uppercase;
-    clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+    font-size: 1.1rem;
     letter-spacing: 2px;
+    animation: buttonFloat 3s infinite alternate;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-button::before {
+    content: "►";
+    position: absolute;
+    left: -20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.5rem;
+    color: #FF00FF;
+    animation: arrowMove 1s infinite alternate;
+}
+
+@keyframes arrowMove {
+    0% { left: -20px; }
+    100% { left: 10px; }
+}
+
+@keyframes buttonFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-5px) rotate(1deg); }
 }
 
 .nav-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #000;
+    transform: scale(1.1) rotate(2deg);
+    box-shadow: 0 0 40px #FF00FF, 0 0 60px #00FFFF;
+    background: linear-gradient(45deg, #FFFF00, #FF00FF, #00FFFF);
+    animation: hyperPulse 0.2s infinite;
 }
 
-.nav-button:active {
-    transform: translate(3px, 3px);
-    box-shadow: none;
+@keyframes hyperPulse {
+    0%, 100% { filter: brightness(1); }
+    50% { filter: brightness(1.5); }
 }
 
-/* About section styles */
+/* Section styles - MAXIMUM RETRO */
 .about-section {
-    background: repeating-linear-gradient(
-        45deg,
-        #fff 0px,
-        #fff 10px,
-        #f9f9f9 10px,
-        #f9f9f9 20px
+    background: repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        #fff 0deg 30deg,
+        #f0f0f0 30deg 60deg,
+        #fff 60deg 90deg,
+        #f8f8f8 90deg 120deg
     );
     padding: 2rem;
     margin-bottom: 2rem;
+    border: 4px ridge #FF00FF;
+    box-shadow: var(--mega-shadow), inset 0 0 20px rgba(0, 255, 255, 0.2);
+    position: relative;
+}
+
+.about-section::before {
+    content: "💫 CYBER ZONE 💫";
+    position: absolute;
+    top: -12px;
+    right: 20px;
+    background: var(--rainbow-gradient);
+    color: #000;
+    padding: 5px 15px;
+    font-weight: bold;
+    font-size: 11px;
     border: 2px solid #000;
-    box-shadow: 5px 5px 0 #000;
+    animation: zoneFlash 1s infinite alternate;
+}
+
+@keyframes zoneFlash {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0.7; transform: scale(1.05); }
 }
 
 .highlight {
-    background: #4ECDC4;
+    background: linear-gradient(45deg, #FFFF00, #FF00FF);
     color: #000;
-    padding: 0 5px;
+    padding: 3px 8px;
     font-weight: bold;
-    animation: blink 1s infinite;
+    border: 2px solid #000;
+    animation: megaBlink 0.5s infinite alternate;
+    display: inline-block;
+    transform: rotate(-1deg);
 }
 
-@keyframes blink {
-    50% { opacity: 0.7; }
+@keyframes megaBlink {
+    0% { 
+        background: linear-gradient(45deg, #FFFF00, #FF00FF);
+        transform: rotate(-1deg) scale(1);
+    }
+    100% { 
+        background: linear-gradient(45deg, #00FFFF, #FFFF00);
+        transform: rotate(1deg) scale(1.05);
+    }
 }
 
 h2 {
-    border-bottom: 3px double #000;
-    padding-bottom: 10px;
+    border-bottom: 5px double #FF00FF;
+    padding-bottom: 15px;
     text-transform: uppercase;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    text-shadow: 2px 2px 0 #4ECDC4;
-    border-style: groove;
-    border-width: 3px;
+    text-shadow: 3px 3px 0 #00FFFF, 6px 6px 0 #FFFF00;
+    border-style: ridge;
+    border-width: 5px;
+    color: #FF00FF;
+    font-size: 2rem;
+    position: relative;
+    animation: headerWave 3s infinite;
 }
 
-/* Gallery styles */
+h2::before {
+    content: "🌟";
+    position: absolute;
+    left: -30px;
+    animation: starSpin 2s infinite linear;
+}
+
+h2::after {
+    content: "🌟";
+    position: absolute;
+    right: -30px;
+    animation: starSpin 2s infinite linear reverse;
+}
+
+@keyframes starSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes headerWave {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-3px); }
+}
+
+/* Gallery styles - CYBER CARDS */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    padding: 1rem 0;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 3rem;
+    padding: 2rem 0;
 }
 
 .gallery-card {
     background: #fff;
-    border: 2px solid #000;
-    box-shadow: 5px 5px 0 #000;
-    transition: transform 0.1s ease;
+    border: 4px outset #FF00FF;
+    box-shadow: var(--mega-shadow), inset 0 0 20px rgba(0, 255, 255, 0.1);
+    transition: all 0.3s ease;
     position: relative;
+    overflow: hidden;
+    animation: cardFloat 4s infinite alternate;
+}
+
+@keyframes cardFloat {
+    0% { transform: translateY(0px) rotate(0deg); }
+    100% { transform: translateY(-10px) rotate(1deg); }
 }
 
 .gallery-card:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 3px 3px 0 #000;
+    transform: scale(1.05) rotate(2deg) translateY(-15px);
+    box-shadow: 0 0 50px #FF00FF, 0 0 80px #00FFFF, inset 0 0 30px rgba(255, 255, 0, 0.3);
+    border: 4px inset #00FFFF;
+    animation: hyperCard 0.5s infinite;
+}
+
+@keyframes hyperCard {
+    0%, 100% { filter: hue-rotate(0deg) brightness(1); }
+    50% { filter: hue-rotate(180deg) brightness(1.2); }
 }
 
 .gallery-card::before {
@@ -162,163 +344,190 @@ h2 {
     left: 0;
     right: 0;
     bottom: 0;
-    background: repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 10px,
-        rgba(222, 121, 6, 0.1) 10px,
-        rgba(222, 121, 6, 0.1) 20px
+    background: repeating-conic-gradient(
+        from 0deg at 50% 50%,
+        transparent 0deg 30deg,
+        rgba(255, 0, 255, 0.1) 30deg 45deg,
+        transparent 45deg 75deg,
+        rgba(0, 255, 255, 0.1) 75deg 90deg
     );
     pointer-events: none;
+    animation: patternSpin 10s infinite linear;
+}
+
+@keyframes patternSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 .gallery-card img {
     width: 100%;
-    height: 200px;
+    height: 250px;
     object-fit: cover;
+    filter: contrast(1.2) saturate(1.3);
+    transition: all 0.3s ease;
 }
 
-.gallery-card h3, 
-.gallery-card p {
-    padding: 0.5rem 1rem;
-    margin: 0;
+.gallery-card:hover img {
+    filter: contrast(1.5) saturate(1.5) hue-rotate(30deg);
+    animation: imageGlitch 0.1s infinite;
+}
+
+@keyframes imageGlitch {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-2px); }
+    40% { transform: translateX(2px); }
+    60% { transform: translateX(-1px); }
+    80% { transform: translateX(1px); }
 }
 
 .gallery-content {
-    padding: 1.5rem;
+    padding: 2rem;
     position: relative;
-    z-index: 1;
+    z-index: 2;
 }
 
 .gallery-card h3 {
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    color: #de7906;
-    font-size: 1.5rem;
+    color: #FF00FF;
+    font-size: 1.8rem;
     margin: 0 0 1rem;
-    text-shadow: 1px 1px 0 #000;
-    border-bottom: 2px groove #4ECDC4;
+    text-shadow: 2px 2px 0 #FFFF00, 4px 4px 0 #00FFFF;
+    border-bottom: 3px groove #00FFFF;
     padding-bottom: 0.5rem;
+    animation: titlePulse 2s infinite alternate;
 }
 
-.gallery-description {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
-    text-align: justify;
+@keyframes titlePulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.02); }
 }
 
 .gallery-contact {
     background: repeating-linear-gradient(
         45deg,
-        #fff 0px,
-        #fff 10px,
-        #f9f9f9 10px,
-        #f9f9f9 20px
+        #fff 0px, #fff 15px,
+        #f0f0f0 15px, #f0f0f0 30px
     );
-    padding: 1rem;
-    border: 1px solid #000;
-    box-shadow: 3px 3px 0 #000;
-}
-
-.gallery-contact p {
-    margin: 0.5rem 0;
-}
-
-.address {
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-}
-
-.contact-info {
+    padding: 1.5rem;
+    border: 3px inset #FF00FF;
+    box-shadow: inset 0 0 20px rgba(0, 255, 255, 0.2);
     margin-top: 1rem;
-    font-family: "Courier New", Courier, monospace;
 }
 
-.contact-info span {
-    display: inline-block;
-    padding: 0.25rem 0;
-}
-
-.phone, .email {
-    transition: color 0.3s ease;
-}
-
-.phone:hover, .email:hover {
-    color: #de7906;
-}
-
-/* Footer styles */
+/* Footer styles - MAXIMUM CYBER */
 .footer {
-    background: var(--retro-gradient);
-    padding: 2rem;
+    background: var(--rainbow-gradient);
+    padding: 3rem 2rem;
     text-align: center;
-    border: 3px solid #000;
-    box-shadow: 5px 5px 0 #000;
-    color: #FFF;
-    text-shadow: 1px 1px 0 #000;
-    margin-top: 2rem;
-}
-
-/* Logo styles */
-.logo-container {
-    max-width: 200px;
-    margin: 0 auto 1.5rem;
-}
-
-.logo-img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* Hero banner styles */
-.hero-banner {
-    width: 100%;
-    height: 400px;
-    margin-bottom: 2rem;
+    border: 5px ridge #FF00FF;
+    box-shadow: var(--mega-shadow), inset 0 0 30px rgba(255, 255, 255, 0.3);
+    color: #000;
+    text-shadow: 2px 2px 0 #FFFF00;
+    margin-top: 3rem;
+    position: relative;
     overflow: hidden;
-    border-radius: 8px;
 }
 
-.hero-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
+.footer::before {
+    content: "🚀 CYBER FOOTER ZONE 🚀";
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #00FFFF;
+    padding: 5px 20px;
+    font-weight: bold;
+    font-size: 12px;
+    border: 2px solid #FF00FF;
+    animation: footerBlink 1s infinite;
 }
 
-/* Responsive design */
+@keyframes footerBlink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.5; }
+}
+
+/* Special effects */
+.established {
+    animation: established90s 3s infinite;
+    font-weight: bold;
+    color: #FF00FF;
+    text-shadow: 2px 2px 0 #FFFF00;
+}
+
+@keyframes established90s {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    25% { transform: scale(1.05) rotate(1deg); }
+    50% { transform: scale(1) rotate(0deg); }
+    75% { transform: scale(1.05) rotate(-1deg); }
+}
+
+/* ULTIMATE RESPONSIVE MADNESS */
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
+        padding: 15px;
+        border-width: 3px;
     }
     
     .header h1 {
-        font-size: 2rem;
+        font-size: 2.2rem;
+        animation: mobileTextCraze 1s infinite alternate;
+    }
+    
+    @keyframes mobileTextCraze {
+        0% { transform: scale(1) rotate(-1deg); color: #FF00FF; }
+        100% { transform: scale(1.02) rotate(1deg); color: #00FFFF; }
     }
     
     .nav-button {
         display: block;
-        margin: 10px auto;
-        width: 80%;
-        max-width: 250px;
+        margin: 15px auto;
+        width: 90%;
+        max-width: 280px;
+        animation: mobileButtonRave 2s infinite alternate;
     }
     
-    .hero-banner {
-        height: 250px;
+    @keyframes mobileButtonRave {
+        0% { background: linear-gradient(45deg, #FF00FF, #00FFFF); }
+        100% { background: linear-gradient(45deg, #FFFF00, #FF00FF); }
     }
     
-    .logo-container {
-        max-width: 150px;
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
     }
-
+    
     .subtitle {
-        white-space: nowrap;
-        animation: marquee 15s linear infinite;
+        animation: mobileMarquee 6s linear infinite;
     }
-
-    @keyframes marquee {
+    
+    @keyframes mobileMarquee {
         0% { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
     }
+}
+
+/* BONUS: Matrix rain effect */
+.container::after {
+    content: "010101010101010101010101010101010101010101010101";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #00FF00;
+    font-family: "Courier New", monospace;
+    font-size: 10px;
+    line-height: 12px;
+    opacity: 0.1;
+    animation: matrixRain 20s infinite linear;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes matrixRain {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100vh); }
 }
