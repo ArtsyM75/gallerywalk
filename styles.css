@@ -48,6 +48,7 @@ body {
     text-shadow: 3px 3px 0 #000;
     background: linear-gradient(45deg, #de7906, #4ECDC4);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
 }
