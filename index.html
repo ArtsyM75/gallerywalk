@@ -11,11 +11,20 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 2rem;
+        }
+
         body {
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f4f6f8;
+        }
+
+        section {
+            padding: 40px 0;
         }
 
         .container {
@@ -201,14 +210,14 @@
         </div>
 
         <div class="navigation">
-            <a href="#about" class="nav-button" onclick="showAbout()">About Us</a>
-            <a href="#galleries" class="nav-button" onclick="showGalleries()">Member Galleries</a>
-            <a href="#events" class="nav-button" onclick="showEvents()">Events</a>
-            <a href="#contact" class="nav-button" onclick="showContact()">Contact</a>
+            <a href="#about" class="nav-button">About Us</a>
+            <a href="#galleries" class="nav-button">Member Galleries</a>
+            <a href="#events" class="nav-button">Events</a>
+            <a href="#contact" class="nav-button">Contact</a>
         </div>
 
         <div class="main-content">
-            <div class="about-section">
+            <section id="about" class="about-section">
                 <h2>About Edmonton Gallery Walk</h2>
                 <p>The Edmonton Gallery Walk, continuing a tradition that began in 1981, promotes art and artists within our community, focusing especially on work by Canadian artists.</p>
                 
@@ -217,30 +226,27 @@
                 <p>Although formal unguided Gallery Walks are planned <span class="highlight">three times per year</span>, we encourage group walks throughout the year, and will be happy to assist in the planning of any gallery walk for schools, conventions, or groups in general.</p>
                 
                 <p><span class="highlight">Please contact any of the member galleries</span> if you are planning a visit to find out specific information about upcoming exhibitions.</p>
-            </div>
+            </section>
 
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Location</h3>
-                    <p>124 Street Area<br>
-                    West of Downtown Core<br>
-                    Two Walkable Blocks</p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>Events</h3>
-                    <p>Three Formal Gallery Walks<br>
-                    Per Year<br>
-                    Group Walks Welcome</p>
-                </div>
-                
-                <div class="info-card">
-                    <h3>Focus</h3>
-                    <p>Canadian Artists<br>
-                    Community Promotion<br>
-                    Arts Education</p>
-                </div>
-            </div>
+            <section id="galleries" class="about-section">
+                <h2>Member Galleries</h2>
+                <p>Our member galleries in the 124 Street area collaborate to present coordinated exhibitions and events.</p>
+                <p>For current gallery listings and exhibition information, please contact individual galleries directly or check back for updates to our website.</p>
+            </section>
+
+            <section id="events" class="about-section">
+                <h2>Gallery Walk Events</h2>
+                <p>We organize three formal gallery walks per year, featuring special exhibitions coordinated among our member galleries.</p>
+                <p>Group walks are welcome throughout the year. Contact any member gallery to arrange visits for schools, conventions, or community groups.</p>
+                <p>Event dates and details will be posted here as they are confirmed.</p>
+            </section>
+
+            <section id="contact" class="about-section">
+                <h2>Contact Information</h2>
+                <p>For information about Edmonton Gallery Walk:</p>
+                <p class="highlight">Email: info@edmontongallerywalk.com</p>
+                <p>To plan group visits or learn about upcoming exhibitions, please contact any of our member galleries directly.</p>
+            </section>
         </div>
 
         <div class="footer">
