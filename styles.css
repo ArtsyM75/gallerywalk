@@ -1,16 +1,16 @@
 /* Base styles */
 :root {
-    --primary-color: #FF6B6B;
+    --primary-color: #e59e05;
     --accent-color: #4ECDC4;
-    --text-color: #2C3E50;
+    --text-color: #000000;
     --background-color: #FFFFFF;
-    --retro-gradient: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    --retro-gradient: linear-gradient(45deg, #c59c06, #0b52d6);
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Courier New", Courier, monospace; 
     line-height: 1.6;
     color: var(--text-color);
     background: #FFF url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABAD2Mw9fuRdIeAAAAABJRU5ErkJggg==') repeat;
