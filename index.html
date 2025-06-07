@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery Walk - Discover Art & Culture</title>
+    <title>Edmonton Gallery Walk</title>
     <style>
         * {
             margin: 0;
@@ -12,288 +12,264 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 50%, #10B981 100%);
-            min-height: 100vh;
+            background-color: #f4f6f8;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
+            max-width: 1100px;
+            margin: 2rem auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            border-radius: 10px;
         }
 
-        .hero {
+        .header {
             text-align: center;
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 20px;
-            padding: 4rem 2rem;
-            margin-bottom: 3rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            border-bottom: none;
+            padding-bottom: 30px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #2c5f8e 0%, #1a4a7a 100%);
+            color: white;
+            border-radius: 8px;
+            padding: 40px 20px;
         }
 
-        h1 {
-            font-size: 4rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            letter-spacing: -2px;
+        .header h1 {
+            font-size: 3em;
+            color: white;
+            margin-bottom: 15px;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
         }
 
-        .subtitle {
-            font-size: 1.4rem;
-            color: #666;
-            margin-bottom: 2rem;
+        .header .subtitle {
+            font-size: 1.3em;
+            color: rgba(255,255,255,0.9);
+            font-style: normal;
             font-weight: 300;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
 
-        .cta-section {
-            margin: 2rem 0;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
-            color: white;
-            padding: 1.2rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            margin: 0.5rem;
-            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
-        }
-
-        .cta-button.secondary {
-            background: transparent;
-            border: 2px solid #8B5CF6;
-            color: #8B5CF6;
-        }
-
-        .cta-button.secondary:hover {
-            background: #8B5CF6;
-            color: white;
-        }
-
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .feature {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .navigation {
             text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            background-color: #e67e22;
+            color: white;
+            padding: 14px 28px;
+            margin: 8px 12px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .nav-button:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .main-content {
+            margin-bottom: 40px;
+        }
+
+        .about-section {
+            background-color: #ffffff;
+            padding: 35px;
+            border-left: none;
+            margin-bottom: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+        }
+
+        .about-section h2 {
+            color: #2c5f8e;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+
+        .about-section p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
+            text-align: justify;
+        }
+
+        .highlight {
+            font-weight: 600;
+            color: #e67e22;
+            background: linear-gradient(120deg, rgba(230,126,34,0.1) 0%, rgba(230,126,34,0.1) 100%);
+            padding: 2px 6px;
+            border-radius: 4px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .info-card {
+            background-color: white;
+            border: none;
+            padding: 25px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
             transition: transform 0.3s ease;
         }
 
-        .feature:hover {
+        .info-card:hover {
             transform: translateY(-5px);
         }
 
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            display: block;
-        }
-
-        .feature h3 {
-            color: #333;
-            margin-bottom: 1rem;
-            font-size: 1.4rem;
+        .info-card h3 {
+            color: #2c5f8e;
+            margin-bottom: 15px;
+            font-size: 1.4em;
             font-weight: 600;
         }
 
-        .feature p {
-            color: #666;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        .gallery-preview {
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 20px;
-            padding: 3rem 2rem;
-            text-align: center;
-            margin: 3rem 0;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .gallery-item {
-            aspect-ratio: 1;
-            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: #999;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: scale(1.05);
+        .info-card p {
+            font-size: 1em;
+            line-height: 1.5;
         }
 
         .footer {
-            margin-top: 4rem;
-            padding: 2rem;
+            border-top: none;
+            padding: 30px;
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            color: rgba(255, 255, 255, 0.9);
+            background: linear-gradient(135deg, #ecf0f1 0%, #e3e7ea 100%);
+            margin-top: 50px;
+            border-radius: 8px;
+        }
+
+        .footer h3 {
+            color: #2c5f8e;
+            margin-bottom: 15px;
+        }
+
+        .contact-info {
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+
+        .footer p {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        .established {
+            font-style: italic;
+            color: #e67e22;
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2.5rem;
-                letter-spacing: -1px;
-            }
-            
-            .subtitle {
-                font-size: 1.2rem;
-            }
-            
-            .hero {
-                padding: 2.5rem 1.5rem;
-            }
-            
             .container {
-                padding: 1rem;
+                margin: 10px;
+                padding: 15px;
             }
-
-            .feature {
-                padding: 2rem;
+            
+            .header h1 {
+                font-size: 2.2em;
+            }
+            
+            .nav-button {
+                display: block;
+                margin: 12px auto;
+                width: 80%;
+                max-width: 250px;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="hero">
-            <h1>Edmonton Gallery Walk</h1>
-            <p class="subtitle">Seven member galleries. Six walkable blocks. Three coordinated events per year featuring unique exhibits planned specifically for gallery walks.</p>
-            
-            <div class="cta-section">
-                <a href="#about" class="cta-button" onclick="showAbout()">About Us</a>
-                <a href="#members" class="cta-button secondary" onclick="showMembers()">Member Galleries</a>
-                <a href="#exhibits" class="cta-button" onclick="showExhibits()">Current Exhibits</a>
-                <a href="#contact" class="cta-button secondary" onclick="showContact()">Contact Us</a>
-            </div>
+        <div class="header">
+            <h1>EDMONTON GALLERY WALK</h1>
+            <p class="subtitle">Promoting Art and Artists in Edmonton's Gallery District</p>
         </div>
 
-        <div class="features">
-            <div class="feature">
-                <span class="feature-icon">🏛️</span>
-                <h3>Seven Member Galleries</h3>
-                <p>Our participating galleries collaborate to create coordinated exhibitions within an easily walkable six-block area in Edmonton's vibrant arts district.</p>
-            </div>
-            
-            <div class="feature">
-                <span class="feature-icon">📅</span>
-                <h3>Seasonal Events</h3>
-                <p>Three major gallery walk events each year - Spring, Fall, and Winter - featuring unique exhibits planned specifically for these coordinated community celebrations.</p>
-            </div>
-            
-            <div class="feature">
-                <span class="feature-icon">🗺️</span>
-                <h3>Six Block Walk</h3>
-                <p>All galleries are within easy walking distance of each other, creating an intimate and accessible cultural experience in the heart of Edmonton's gallery district.</p>
-            </div>
+        <div class="navigation">
+            <a href="#about" class="nav-button" onclick="showAbout()">About Us</a>
+            <a href="#galleries" class="nav-button" onclick="showGalleries()">Member Galleries</a>
+            <a href="#events" class="nav-button" onclick="showEvents()">Events</a>
+            <a href="#contact" class="nav-button" onclick="showContact()">Contact</a>
         </div>
 
-        <div class="gallery-preview">
-            <h2>Featured Galleries</h2>
-            <p>Get a preview of some amazing spaces you'll discover</p>
-            <div class="gallery-grid">
-                <div class="gallery-item">🖼️</div>
-                <div class="gallery-item">🎭</div>
-                <div class="gallery-item">📸</div>
-                <div class="gallery-item">🗿</div>
+        <div class="main-content">
+            <div class="about-section">
+                <h2>About Edmonton Gallery Walk</h2>
+                <p>The Edmonton Gallery Walk, continuing a tradition that began in 1981, promotes art and artists within our community, focusing especially on work by Canadian artists.</p>
+                
+                <p>The Gallery Walk is located <span class="highlight">west of the downtown core in the 124 Street area</span>, a vital business community with many quality restaurants, gift and clothing shops, bookstores, live theatre venues and specialty businesses in its <span class="highlight">two block area</span>.</p>
+                
+                <p>Although formal unguided Gallery Walks are planned <span class="highlight">three times per year</span>, we encourage group walks throughout the year, and will be happy to assist in the planning of any gallery walk for schools, conventions, or groups in general.</p>
+                
+                <p><span class="highlight">Please contact any of the member galleries</span> if you are planning a visit to find out specific information about upcoming exhibitions.</p>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Location</h3>
+                    <p>124 Street Area<br>
+                    West of Downtown Core<br>
+                    Two Walkable Blocks</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Events</h3>
+                    <p>Three Formal Gallery Walks<br>
+                    Per Year<br>
+                    Group Walks Welcome</p>
+                </div>
+                
+                <div class="info-card">
+                    <h3>Focus</h3>
+                    <p>Canadian Artists<br>
+                    Community Promotion<br>
+                    Arts Education</p>
+                </div>
             </div>
         </div>
 
         <div class="footer">
-            <h3>Join the Next Gallery Walk</h3>
-            <p>Be part of Edmonton's coordinated gallery experience with unique exhibitions planned specifically for our seasonal events.</p>
-            <br>
-            <a href="#contact" class="cta-button" onclick="showContact()">Get Event Updates</a>
-            <br><br>
-            <p>&copy; 2025 Edmonton Gallery Walk. Promoting Edmonton's artistic community since 1981.</p>
+            <h3>Join Us for the Next Gallery Walk</h3>
+            <div class="contact-info">
+                <p><strong>For event information and group bookings:</strong><br>
+                Contact any member gallery directly</p>
+            </div>
+            <p class="established">Established 1981</p>
+            <p>&copy; 2025 Edmonton Gallery Walk. Promoting Edmonton's artistic community.</p>
         </div>
     </div>
 
     <script>
         function showAbout() {
-            alert('About Edmonton Gallery Walk\n\nSince 1981, Edmonton Gallery Walk has coordinated special exhibitions among seven member galleries in a walkable six-block area. Our mission is to promote the artistic community through collaborative events three times per year.\n\nMore details coming soon!');
+            alert('About Edmonton Gallery Walk\n\nContinuing a tradition since 1981, we promote art and artists in Edmonton\'s 124 Street gallery district. Our member galleries coordinate special exhibitions and community events to showcase Canadian artists.\n\nThe Gallery Walk covers a two-block area west of downtown Edmonton, creating an accessible cultural experience for residents and visitors.');
         }
 
-        function showMembers() {
-            alert('Our Member Galleries\n\nSeven galleries participate in coordinated exhibitions:\n\n• Gallery locations within six walkable blocks\n• Unique exhibits planned for gallery walks\n• Spring, Fall, and Winter events\n\nFull gallery directory coming soon!');
+        function showGalleries() {
+            alert('Member Galleries\n\nOur member galleries in the 124 Street area collaborate to present coordinated exhibitions and events.\n\nFor current gallery listings and exhibition information, please contact individual galleries directly or check back for updates to our website.');
         }
 
-        function showExhibits() {
-            alert('Current Exhibitions\n\nOur member galleries create unique exhibits specifically planned for gallery walk events.\n\nNext coordinated exhibition information coming soon!\n\nVisit our member galleries year-round for ongoing exhibitions.');
+        function showEvents() {
+            alert('Gallery Walk Events\n\nWe organize three formal gallery walks per year, featuring special exhibitions coordinated among our member galleries.\n\nGroup walks are welcome throughout the year. Contact any member gallery to arrange visits for schools, conventions, or community groups.\n\nEvent dates and details will be posted here as they are confirmed.');
         }
 
         function showContact() {
-            alert('Contact Edmonton Gallery Walk\n\nEmail: info@edmontongallerywalk.com\nPhone: (780) XXX-XXXX\n\n(Update with your real contact information)');
+            alert('Contact Information\n\nFor information about Edmonton Gallery Walk:\n\nEmail: info@edmontongallerywalk.com\n\nTo plan group visits or learn about upcoming exhibitions, please contact any of our member galleries directly.\n\n(Contact details will be updated as member information is confirmed)');
         }
-
-        // Enhanced animation on load
-        window.addEventListener('load', function() {
-            const hero = document.querySelector('.hero');
-            const features = document.querySelectorAll('.feature');
-            
-            hero.style.opacity = '0';
-            hero.style.transform = 'translateY(30px)';
-            
-            features.forEach((feature, index) => {
-                feature.style.opacity = '0';
-                feature.style.transform = 'translateY(20px)';
-            });
-            
-            setTimeout(function() {
-                hero.style.transition = 'all 0.8s ease';
-                hero.style.opacity = '1';
-                hero.style.transform = 'translateY(0)';
-                
-                features.forEach((feature, index) => {
-                    setTimeout(() => {
-                        feature.style.transition = 'all 0.6s ease';
-                        feature.style.opacity = '1';
-                        feature.style.transform = 'translateY(0)';
-                    }, 200 + (index * 100));
-                });
-            }, 200);
-        });
     </script>
 </body>
 </html>
