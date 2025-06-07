@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery Walk - Discover Art & Culture</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #8B5CF6 0%, #06B6D4 50%, #10B981 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .hero {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: -2px;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            color: #666;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-section {
+            margin: 2rem 0;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #8B5CF6, #06B6D4);
+            color: white;
+            padding: 1.2rem 2.5rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            margin: 0.5rem;
+            box-shadow: 0 4px 15px rgba(139, 92, 246, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(139, 92, 246, 0.4);
+        }
+
+        .cta-button.secondary {
+            background: transparent;
+            border: 2px solid #8B5CF6;
+            color: #8B5CF6;
+        }
+
+        .cta-button.secondary:hover {
+            background: #8B5CF6;
+            color: white;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .feature {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2.5rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .feature h3 {
+            color: #333;
+            margin-bottom: 1rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .gallery-preview {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin: 3rem 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-item {
+            aspect-ratio: 1;
+            background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #999;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            margin-top: 4rem;
+            padding: 2rem;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 2.5rem 1.5rem;
+            }
+            
+            .container {
+                padding: 1rem;
+            }
+
+            .feature {
+                padding: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>Gallery Walk</h1>
+            <p class="subtitle">Discover extraordinary art, culture, and stories through curated gallery experiences that bring communities together.</p>
+            
+            <div class="cta-section">
+                <a href="#explore" class="cta-button" onclick="showExplore()">Explore Galleries</a>
+                <a href="#about" class="cta-button secondary" onclick="showAbout()">Learn More</a>
+            </div>
+        </div>
+
+        <div class="features">
+            <div class="feature">
+                <span class="feature-icon">🎨</span>
+                <h3>Curated Experiences</h3>
+                <p>Carefully selected galleries and exhibitions that showcase the best of local and international art, from contemporary pieces to classic masterworks.</p>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">🚶‍♀️</span>
+                <h3>Walking Tours</h3>
+                <p>Self-guided and group walking tours that take you through art districts, connecting galleries and cultural spaces in meaningful ways.</p>
+            </div>
+            
+            <div class="feature">
+                <span class="feature-icon">🌟</span>
+                <h3>Community Events</h3>
+                <p>Regular gallery walks, artist meetups, and cultural events that bring art lovers together to explore and discuss contemporary culture.</p>
+            </div>
+        </div>
+
+        <div class="gallery-preview">
+            <h2>Featured Galleries</h2>
+            <p>Get a preview of some amazing spaces you'll discover</p>
+            <div class="gallery-grid">
+                <div class="gallery-item">🖼️</div>
+                <div class="gallery-item">🎭</div>
+                <div class="gallery-item">📸</div>
+                <div class="gallery-item">🗿</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <h3>Ready to Start Walking?</h3>
+            <p>Join our community of art enthusiasts and cultural explorers.</p>
+            <br>
+            <a href="#join" class="cta-button" onclick="showJoin()">Join Gallery Walk</a>
+            <br><br>
+            <p>&copy; 2025 Gallery Walk. Connecting communities through art.</p>
+        </div>
+    </div>
+
+    <script>
+        function showExplore() {
+            alert('🎨 Gallery exploration coming soon!\n\nWe\'re curating amazing gallery experiences for you. Stay tuned for our launch!');
+        }
+
+        function showAbout() {
+            alert('📖 About Gallery Walk\n\nWe believe art should be accessible and community-driven. Gallery Walk creates opportunities for people to discover, experience, and discuss art together.\n\nMore details coming soon!');
+        }
+
+        function showJoin() {
+            alert('🌟 Join our community!\n\nEmail us at: hello@gallerywalk.com\nOr follow us for updates!\n\n(Update this with your real contact info)');
+        }
+
+        // Enhanced animation on load
+        window.addEventListener('load', function() {
+            const hero = document.querySelector('.hero');
+            const features = document.querySelectorAll('.feature');
+            
+            hero.style.opacity = '0';
+            hero.style.transform = 'translateY(30px)';
+            
+            features.forEach((feature, index) => {
+                feature.style.opacity = '0';
+                feature.style.transform = 'translateY(20px)';
+            });
+            
+            setTimeout(function() {
+                hero.style.transition = 'all 0.8s ease';
+                hero.style.opacity = '1';
+                hero.style.transform = 'translateY(0)';
+                
+                features.forEach((feature, index) => {
+                    setTimeout(() => {
+                        feature.style.transition = 'all 0.6s ease';
+                        feature.style.opacity = '1';
+                        feature.style.transform = 'translateY(0)';
+                    }, 200 + (index * 100));
+                });
+            }, 200);
+        });
+    </script>
+</body>
+</html>
