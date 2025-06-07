@@ -184,6 +184,69 @@ h2 {
     margin: 0;
 }
 
+.gallery-content {
+    padding: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-card h3 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: #de7906;
+    font-size: 1.5rem;
+    margin: 0 0 1rem;
+    text-shadow: 1px 1px 0 #000;
+    border-bottom: 2px groove #4ECDC4;
+    padding-bottom: 0.5rem;
+}
+
+.gallery-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.gallery-contact {
+    background: repeating-linear-gradient(
+        45deg,
+        #fff 0px,
+        #fff 10px,
+        #f9f9f9 10px,
+        #f9f9f9 20px
+    );
+    padding: 1rem;
+    border: 1px solid #000;
+    box-shadow: 3px 3px 0 #000;
+}
+
+.gallery-contact p {
+    margin: 0.5rem 0;
+}
+
+.address {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+
+.contact-info {
+    margin-top: 1rem;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.contact-info span {
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+.phone, .email {
+    transition: color 0.3s ease;
+}
+
+.phone:hover, .email:hover {
+    color: #de7906;
+}
+
 /* Footer styles */
 .footer {
     background: var(--retro-gradient);
