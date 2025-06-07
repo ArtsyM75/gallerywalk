@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edmonton Gallery Walk</title>
+    <meta name="description" content="Edmonton Gallery Walk - Art galleries and exhibitions in Edmonton's 124 Street area">
+    <meta name="keywords" content="Edmonton art, gallery walk, 124 Street, art exhibitions">
+    <!-- Add favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -13,14 +17,14 @@
             <p class="subtitle">Promoting Art and Artists in Edmonton's Gallery District</p>
         </div>
 
-        <div class="navigation">
+        <div class="navigation" role="navigation" aria-label="Main navigation">
             <a href="#about" class="nav-button">About Us</a>
             <a href="#galleries" class="nav-button">Member Galleries</a>
             <a href="#events" class="nav-button">Events</a>
             <a href="#contact" class="nav-button">Contact</a>
         </div>
 
-        <div class="main-content">
+        <div class="main-content" role="main">
             <section id="about" class="about-section">
                 <h2>About Edmonton Gallery Walk</h2>
                 <p>The Edmonton Gallery Walk, continuing a tradition that began in 1981, promotes art and artists within our community, focusing especially on work by Canadian artists.</p>
@@ -36,7 +40,7 @@
                 <h2>Member Galleries</h2>
                 <div class="gallery-grid">
                     <div class="gallery-card">
-                        <img src="images/gallery1.jpg" alt="Gallery 1" loading="lazy">
+                        <img src="images/gallery1.jpg" alt="Gallery 1 - Description of the artwork or exhibition" loading="lazy">
                         <h3>Gallery Name</h3>
                         <p>Brief description of the gallery</p>
                         <p class="address">124 Street Location</p>
@@ -60,7 +64,7 @@
             </section>
         </div>
 
-        <div class="footer">
+        <footer class="footer">
             <h3>Join Us for the Next Gallery Walk</h3>
             <div class="contact-info">
                 <p><strong>For event information and group bookings:</strong><br>
@@ -68,7 +72,7 @@
             </div>
             <p class="established">Established 1981</p>
             <p>&copy; 2025 Edmonton Gallery Walk. Promoting Edmonton's artistic community.</p>
-        </div>
+        </footer>
     </div>
 
     <script>
