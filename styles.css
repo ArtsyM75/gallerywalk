@@ -28,12 +28,6 @@ body {
                     transparent 20px, transparent 30px,
                     rgba(0, 255, 255, 0.1) 30px, rgba(0, 255, 255, 0.1) 40px);
     cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24'%3E%3Cpath d='M12 0l3 9h9l-7 5 3 9-8-6-8 6 3-9-7-5h9z' fill='%23FF00FF'/%3E%3C/svg%3E"), auto;
-    animation: bodyPulse 3s infinite alternate;
-}
-
-@keyframes bodyPulse {
-    0% { filter: hue-rotate(0deg); }
-    100% { filter: hue-rotate(360deg); }
 }
 
 .container {
@@ -105,25 +99,8 @@ body {
     color: #000;
     text-shadow: 2px 2px 0 #FFFF00, 4px 4px 0 #FF00FF, 6px 6px 0 #00FFFF;
     font-family: "Comic Sans MS", "Comic Sans", cursive;
-    animation: textDance 2s infinite alternate, colorCycle 4s infinite;
     position: relative;
     z-index: 2;
-}
-
-@keyframes textDance {
-    0% { transform: rotate(-2deg) scale(1); }
-    25% { transform: rotate(2deg) scale(1.05); }
-    50% { transform: rotate(-1deg) scale(1); }
-    75% { transform: rotate(1deg) scale(1.05); }
-    100% { transform: rotate(-2deg) scale(1); }
-}
-
-@keyframes colorCycle {
-    0% { color: #FF00FF; }
-    25% { color: #00FFFF; }
-    50% { color: #FFFF00; }
-    75% { color: #00FF00; }
-    100% { color: #FF00FF; }
 }
 
 .subtitle {
@@ -132,14 +109,8 @@ body {
     color: #000;
     font-weight: bold;
     text-shadow: 1px 1px 0 #FFFF00, 2px 2px 0 #FF00FF;
-    animation: marqueeText 8s linear infinite;
     position: relative;
     z-index: 2;
-}
-
-@keyframes marqueeText {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
 }
 
 /* Navigation styles - CYBER BUTTONS */
@@ -164,12 +135,11 @@ body {
     text-decoration: none;
     border: 3px outset #FFFF00;
     box-shadow: var(--neon-shadow);
-    transition: all 0.1s ease;
+    transition: all 0.3s ease;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 1.1rem;
     letter-spacing: 2px;
-    animation: buttonFloat 3s infinite alternate;
     position: relative;
     overflow: hidden;
 }
@@ -177,22 +147,11 @@ body {
 .nav-button::before {
     content: "►";
     position: absolute;
-    left: -20px;
+    left: 10px;
     top: 50%;
     transform: translateY(-50%);
     font-size: 1.5rem;
     color: #FF00FF;
-    animation: arrowMove 1s infinite alternate;
-}
-
-@keyframes arrowMove {
-    0% { left: -20px; }
-    100% { left: 10px; }
-}
-
-@keyframes buttonFloat {
-    0% { transform: translateY(0px) rotate(0deg); }
-    100% { transform: translateY(-5px) rotate(1deg); }
 }
 
 .nav-button:hover {
@@ -464,7 +423,7 @@ h2::after {
     75% { transform: scale(1.05) rotate(-1deg); }
 }
 
-/* ULTIMATE RESPONSIVE MADNESS */
+/* ULTIMATE RESPONSIVE DESIGN */
 @media (max-width: 768px) {
     .container {
         padding: 15px;
@@ -473,12 +432,6 @@ h2::after {
     
     .header h1 {
         font-size: 2.2rem;
-        animation: mobileTextCraze 1s infinite alternate;
-    }
-    
-    @keyframes mobileTextCraze {
-        0% { transform: scale(1) rotate(-1deg); color: #FF00FF; }
-        100% { transform: scale(1.02) rotate(1deg); color: #00FFFF; }
     }
     
     .nav-button {
@@ -486,12 +439,6 @@ h2::after {
         margin: 15px auto;
         width: 90%;
         max-width: 280px;
-        animation: mobileButtonRave 2s infinite alternate;
-    }
-    
-    @keyframes mobileButtonRave {
-        0% { background: linear-gradient(45deg, #FF00FF, #00FFFF); }
-        100% { background: linear-gradient(45deg, #FFFF00, #FF00FF); }
     }
     
     .gallery-grid {
@@ -500,12 +447,8 @@ h2::after {
     }
     
     .subtitle {
-        animation: mobileMarquee 6s linear infinite;
-    }
-    
-    @keyframes mobileMarquee {
-        0% { transform: translateX(100%); }
-        100% { transform: translateX(-100%); }
+        overflow: hidden;
+        white-space: nowrap;
     }
 }
 
