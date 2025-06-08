@@ -9,6 +9,7 @@
     <meta name="keywords" content="Edmonton art, gallery walk, 124 Street, art exhibitions">
     <!-- Add favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <script type="module" src="https://unpkg.com/wired-elements?module"></script>
 </head>
 <body>
     <div class="container">
@@ -22,10 +23,10 @@
 
     
         <div class="navigation" role="navigation" aria-label="Main navigation">
-            <a href="#about" class="nav-button">About Us</a>
-            <a href="#galleries" class="nav-button">Member Galleries</a>
-            <a href="#events" class="nav-button">Events</a>
-            <a href="#contact" class="nav-button">Contact</a>
+            <wired-button elevation="2"><a href="#about">About Us</a></wired-button>
+            <wired-button elevation="2"><a href="#galleries">Member Galleries</a></wired-button>
+            <wired-button elevation="2"><a href="#events">Events</a></wired-button>
+            <wired-button elevation="2"><a href="#contact">Contact</a></wired-button>
         </div>
 
         <div class="main-content" role="main">
@@ -43,13 +44,13 @@
             <section id="galleries" class="about-section">
                 <h2>Member Galleries</h2>
                 <div class="gallery-grid">
-                    <div class="gallery-card">
+                    <wired-card elevation="2" class="gallery-card">
                         <img src="images/gallery1.jpg" alt="Gallery 1 - Description of the artwork or exhibition" loading="lazy">
                         <h3>Gallery Name</h3>
                         <p>Brief description of the gallery</p>
                         <p class="address">124 Street Location</p>
-                    </div>
-                    <div class="gallery-card">
+                    </wired-card>
+                    <wired-card elevation="2" class="gallery-card">
                         <img src="./images/WestEndGallery_800x.webp" alt="West End Gallery - Edmonton's Premier Canadian Art Gallery" loading="lazy">
                         <div class="gallery-content">
                             <h3>West End Gallery</h3>
@@ -66,7 +67,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </wired-card>
                     <!-- Add more gallery cards -->
                 </div>
             </section>

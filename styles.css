@@ -74,6 +74,16 @@ body {
     box-shadow: 1px 1px 0 #000;
 }
 
+.navigation wired-button {
+    margin: 0 10px;
+}
+
+.navigation wired-button a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+}
+
 /* About section styles */
 .about-section {
     background: white;
@@ -126,6 +136,17 @@ h2 {
 .gallery-card p {
     padding: 0.5rem 1rem;
     margin: 0;
+}
+
+wired-card {
+    padding: 20px;
+    margin: 10px;
+    background: white;
+}
+
+wired-card img {
+    max-width: 100%;
+    height: auto;
 }
 
 /* Footer styles */
