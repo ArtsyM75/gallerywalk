@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="./styles.css">
     <meta name="description" content="Edmonton Gallery Walk - Art galleries and exhibitions in Edmonton's 124 Street area">
     <meta name="keywords" content="Edmonton art, gallery walk, 124 Street, art exhibitions">
-    <!-- Add favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <script type="module" src="https://unpkg.com/wired-elements?module"></script>
 </head>
@@ -21,40 +20,28 @@
             <p class="subtitle">Promoting Art and Artists in Edmonton's Gallery District</p>
         </header>
 
-    
-        <div class="navigation" role="navigation" aria-label="Main navigation">
+        <nav class="navigation" role="navigation" aria-label="Main navigation">
             <wired-button elevation="2"><a href="#about">About Us</a></wired-button>
             <wired-button elevation="2"><a href="#galleries">Member Galleries</a></wired-button>
             <wired-button elevation="2"><a href="#events">Events</a></wired-button>
             <wired-button elevation="2"><a href="#contact">Contact</a></wired-button>
-        </div>
+        </nav>
 
-        <div class="main-content" role="main">
+        <main class="main-content" role="main">
             <section id="about" class="about-section">
                 <h2>About Edmonton Gallery Walk</h2>
                 <p>The Edmonton Gallery Walk, continuing a tradition that began in 1981, promotes art and artists within our community, focusing especially on work by Canadian artists.</p>
-                
-                <p>The Gallery Walk is located <span class="highlight">west of the downtown core in the 124 Street area</span>, a vital business community with many quality restaurants, gift and clothing shops, bookstores, live theatre venues and specialty businesses in its <span class="highlight">two block area</span>.</p>
-                
-                <p>Although formal unguided Gallery Walks are planned <span class="highlight">twice per year</span>, we encourage group walks throughout the year, and will be happy to assist in the planning of any gallery walk for schools, conventions, or groups in general.</p>
-                
-                <p><span class="highlight">Please contact any of the member galleries</span> if you are planning a visit to find out specific information about upcoming exhibitions.</p>
+                <p>The Gallery Walk is located <span class="highlight">west of the downtown core in the 124 Street area</span>, a vital business community with many quality restaurants, gift and clothing shops, bookstores, live theatre venues and specialty businesses.</p>
             </section>
 
             <section id="galleries" class="about-section">
                 <h2>Member Galleries</h2>
                 <div class="gallery-grid">
                     <wired-card elevation="2" class="gallery-card">
-                        <img src="images/gallery1.jpg" alt="Gallery 1 - Description of the artwork or exhibition" loading="lazy">
-                        <h3>Gallery Name</h3>
-                        <p>Brief description of the gallery</p>
-                        <p class="address">124 Street Location</p>
-                    </wired-card>
-                    <wired-card elevation="2" class="gallery-card">
                         <img src="./images/WestEndGallery_800x.webp" alt="West End Gallery - Edmonton's Premier Canadian Art Gallery" loading="lazy">
                         <div class="gallery-content">
                             <h3>West End Gallery</h3>
-                            <p class="gallery-description">As one of Canada's oldest commercial art galleries, we proudly showcase the finest examples of Canadian art. We connect collectors and enthusiasts with exceptional works reflecting Canadian creativity's richness and diversity. Our legacy is built on passion, dedication, and a commitment to nurturing the enduring beauty of Canadian artists.</p>
+                            <p class="gallery-description">As one of Canada's oldest commercial art galleries, we proudly showcase the finest examples of Canadian art. We connect collectors and enthusiasts with exceptional works reflecting Canadian creativity's richness and diversity.</p>
                             <div class="gallery-contact">
                                 <p class="address">
                                     10337 124 Street<br>
@@ -68,56 +55,29 @@
                             </div>
                         </div>
                     </wired-card>
-                    <!-- Add more gallery cards -->
                 </div>
             </section>
 
             <div class="hero-banner">
-                <img src="./images/7680-Summer.png" alt="Edmonton Gallery Walk - Summer Exhibition" class="hero-img">
+                <img src="./images/7680-Summer.png" alt="Gallery Walk - Summer Exhibition" class="hero-img">
             </div>
 
             <section id="events" class="about-section">
-                <h2>Gallery Walk Events</h2>
-                <p>We organize three formal gallery walks per year, featuring special exhibitions coordinated among our member galleries.</p>
-                <p>Group walks are welcome throughout the year. Contact any member gallery to arrange visits for schools, conventions, or community groups.</p>
-                <p>Event dates and details will be posted here as they are confirmed.</p>
+                <h2>Gallery Events</h2>
+                <p>Join us for our seasonal gallery walks and special exhibitions throughout the year.</p>
             </section>
 
             <section id="contact" class="about-section">
-                <h2>Contact Information</h2>
-                <p>For information about Edmonton Gallery Walk:</p>
-                <p class="highlight">Email: info@edmontongallerywalk.com</p>
-                <p>To plan group visits or learn about upcoming exhibitions, please contact any of our member galleries directly.</p>
+                <h2>Contact Us</h2>
+                <p>For information about Edmonton Gallery Walk events and exhibitions, please contact any of our member galleries.</p>
             </section>
-        </div>
+        </main>
 
         <footer class="footer">
-            <h3>Join Us for the Next Gallery Walk</h3>
-            <div class="contact-info">
-                <p><strong>For event information and group bookings:</strong><br>
-                Contact any member gallery directly</p>
-            </div>
+            <h3>Edmonton Gallery Walk</h3>
             <p class="established">Established 1981</p>
-            <p>&copy; 2025 Edmonton Gallery Walk. Promoting Edmonton's artistic community.</p>
+            <p>Celebrating over 40 years of art in Edmonton's Gallery District</p>
         </footer>
     </div>
-
-    <script>
-        function showAbout() {
-            alert('About Edmonton Gallery Walk\n\nContinuing a tradition since 1981, we promote art and artists in Edmonton\'s 124 Street gallery district. Our member galleries coordinate special exhibitions and community events to showcase Canadian artists.\n\nThe Gallery Walk covers a two-block area west of downtown Edmonton, creating an accessible cultural experience for residents and visitors.');
-        }
-
-        function showGalleries() {
-            alert('Member Galleries\n\nOur member galleries in the 124 Street area collaborate to present coordinated exhibitions and events.\n\nFor current gallery listings and exhibition information, please contact individual galleries directly or check back for updates to our website.');
-        }
-
-        function showEvents() {
-            alert('Gallery Walk Events\n\nWe organize three formal gallery walks per year, featuring special exhibitions coordinated among our member galleries.\n\nGroup walks are welcome throughout the year. Contact any member gallery to arrange visits for schools, conventions, or community groups.\n\nEvent dates and details will be posted here as they are confirmed.');
-        }
-
-        function showContact() {
-            alert('Contact Information\n\nFor information about Edmonton Gallery Walk:\n\nEmail: info@edmontongallerywalk.com\n\nTo plan group visits or learn about upcoming exhibitions, please contact any of our member galleries directly.\n\n(Contact details will be updated as member information is confirmed)');
-        }
-    </script>
 </body>
 </html>

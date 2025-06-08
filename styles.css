@@ -1,19 +1,28 @@
-/* Base styles */
+/* Edmonton Gallery Walk - Optimized CSS with Wired Elements */
+
 :root {
     --primary-color: #FF6B6B;
     --accent-color: #4ECDC4;
     --text-color: #2C3E50;
-    --background-color: #FFFFFF;
-    --retro-gradient: linear-gradient(45deg, #FF6B6B, #4ECDC4);
+    --shadow-color: #000;
+    --border-width: 2px;
+}
+
+/* Base Styles */
+* {
+    box-sizing: border-box;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: "Courier New", Courier, monospace;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
     line-height: 1.6;
     color: var(--text-color);
-    background: #FFF url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABAD2Mw9fuRdIeAAAAABJRU5ErkJggg==') repeat;
+    background: #FFF;
+    background-image: radial-gradient(#4ECDC4 1px, transparent 1px);
+    background-size: 20px 20px;
+    min-height: 100vh;
 }
 
 .container {
@@ -21,160 +30,407 @@ body {
     margin: 0 auto;
     padding: 20px;
     background: rgba(255, 255, 255, 0.95);
-    border: 2px solid #4ECDC4;
+    border: var(--border-width) solid var(--accent-color);
+    border-radius: 8px;
+    box-shadow: 8px 8px 0 var(--shadow-color);
 }
 
-/* Header styles */
+/* Header Styles */
 .header {
     text-align: center;
     padding: 2rem 1rem;
     margin-bottom: 2rem;
     background: var(--retro-gradient);
-    border: 3px solid #000;
-    box-shadow: 5px 5px 0 #000;
+    border: 3px solid var(--shadow-color);
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 var(--shadow-color);
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: "✦ GALLERY DISTRICT ✦";
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    background: var(--highlight-bg);
+    color: var(--shadow-color);
+    padding: 4px 12px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 2px solid var(--shadow-color);
+    border-radius: 15px;
+    transform: rotate(15deg);
+}
+
+.logo-container {
+    max-width: 180px;
+    margin: 0 auto 1rem;
+    filter: drop-shadow(3px 3px 0 var(--shadow-color));
+}
+
+.logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
 }
 
 .header h1 {
     margin: 0;
     font-size: 2.5rem;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-transform: uppercase;
     color: #FFF;
-    text-shadow: 2px 2px 0 #000;
+    text-shadow: 3px 3px 0 var(--shadow-color);
+    font-weight: bold;
 }
 
 .subtitle {
     margin: 10px 0 0;
     font-size: 1.2rem;
-    opacity: 0.9;
+    color: #FFF;
+    text-shadow: 1px 1px 0 var(--shadow-color);
+    font-weight: 500;
 }
 
-/* Navigation styles */
+/* Navigation Styles - Optimized for Wired Elements */
 .navigation {
     text-align: center;
     margin-bottom: 2rem;
-}
-
-.nav-button {
-    display: inline-block;
-    padding: 12px 24px;
-    margin: 5px;
-    background: #FF6B6B;
-    color: white;
-    text-decoration: none;
-    border: 2px solid #000;
-    box-shadow: 3px 3px 0 #000;
-    transition: all 0.1s ease;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-
-.nav-button:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0 #000;
+    padding: 1rem;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent 0px, transparent 10px,
+        rgba(78, 205, 196, 0.1) 10px, rgba(78, 205, 196, 0.1) 20px
+    );
+    border: 2px dashed var(--accent-color);
+    border-radius: 8px;
 }
 
 .navigation wired-button {
-    margin: 0 10px;
+    margin: 8px 12px;
+    --wired-button-outline-color: var(--primary-color);
+    --wired-button-text-color: var(--text-color);
+    display: inline-block;
 }
 
 .navigation wired-button a {
     text-decoration: none;
     color: var(--text-color);
     font-family: "Comic Sans MS", "Comic Sans", cursive;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 12px 18px;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
 }
 
-/* About section styles */
+.navigation wired-button:hover a {
+    color: var(--primary-color);
+}
+
+/* Section Styles */
 .about-section {
     background: white;
     padding: 2rem;
     margin-bottom: 2rem;
-    border: 2px solid #000;
-    box-shadow: 5px 5px 0 #000;
+    border: var(--border-width) solid var(--shadow-color);
+    border-radius: 8px;
+    box-shadow: 5px 5px 0 var(--shadow-color);
+    position: relative;
 }
 
-.highlight {
-    background: #4ECDC4;
-    color: #000;
-    padding: 0 5px;
+.about-section::before {
+    content: "★";
+    position: absolute;
+    top: -8px;
+    left: 20px;
+    background: var(--sketch-orange);
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
     font-weight: bold;
 }
 
-h2 {
-    border-bottom: 3px double #000;
-    padding-bottom: 10px;
-    text-transform: uppercase;
+.highlight {
+    background: var(--highlight-bg);
+    color: var(--shadow-color);
+    padding: 2px 6px;
+    font-weight: bold;
+    border-radius: 3px;
+    display: inline-block;
+    transform: rotate(-1deg);
+    margin: 0 2px;
 }
 
-/* Gallery styles */
+h2 {
+    border-bottom: 3px double var(--shadow-color);
+    padding-bottom: 12px;
+    text-transform: uppercase;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+h2::after {
+    content: "◆";
+    position: absolute;
+    right: 0;
+    bottom: 15px;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+/* Gallery Grid - Optimized for Wired Cards */
 .gallery-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     padding: 1rem 0;
 }
 
-.gallery-card {
-    background: white;
-    border: 2px solid #000;
-    box-shadow: 5px 5px 0 #000;
-    transition: transform 0.1s ease;
-}
-
-.gallery-card:hover {
-    transform: translate(2px, 2px);
-    box-shadow: 3px 3px 0 #000;
-}
-
-.gallery-card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.gallery-card h3, 
-.gallery-card p {
-    padding: 0.5rem 1rem;
-    margin: 0;
-}
-
+/* Wired Card Styling */
 wired-card {
-    padding: 20px;
-    margin: 10px;
-    background: white;
+    --wired-card-background-fill: white;
+    --wired-card-background-fill-opacity: 0.9;
+    --wired-card-outline-color: var(--sketch-purple);
+    display: block;
+    margin: 0;
+    padding: 0 !important;
+}
+
+/* Simplify hover states */
+wired-card:hover {
+    filter: drop-shadow(4px 4px 0 rgba(0, 0, 0, 0.2));
 }
 
 wired-card img {
-    max-width: 100%;
-    height: auto;
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent-color);
 }
 
-/* Footer styles */
+.gallery-content {
+    padding: 1.5rem;
+}
+
+.gallery-card h3 {
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin: 0 0 1rem;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+    border-bottom: 2px dashed var(--accent-color);
+    padding-bottom: 0.5rem;
+}
+
+.gallery-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.gallery-contact {
+    background: repeating-linear-gradient(
+        45deg,
+        #fff 0px, #fff 10px,
+        #f9f9f9 10px, #f9f9f9 20px
+    );
+    padding: 1rem;
+    border: 1px solid var(--accent-color);
+    border-radius: 6px;
+    box-shadow: 2px 2px 0 var(--shadow-color);
+}
+
+.gallery-contact p {
+    margin: 0.5rem 0;
+}
+
+.address {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.contact-info {
+    margin-top: 1rem;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.9rem;
+}
+
+.contact-info span {
+    display: inline-block;
+    padding: 0.25rem 0;
+}
+
+.phone, .email {
+    transition: color 0.3s ease;
+}
+
+.phone:hover, .email:hover {
+    color: var(--primary-color);
+}
+
+/* Hero Banner */
+.hero-banner {
+    width: 100%;
+    height: 400px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+    border-radius: 12px;
+    border: 3px solid var(--shadow-color);
+    box-shadow: 6px 6px 0 var(--shadow-color);
+    position: relative;
+}
+
+.hero-banner::after {
+    content: "🎨 SEASONAL GALLERY SHOWCASE 🎨";
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.hero-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.3s ease;
+}
+
+.hero-banner:hover .hero-img {
+    transform: scale(1.02);
+}
+
+/* Footer Styles */
 .footer {
     background: var(--retro-gradient);
     padding: 2rem;
     text-align: center;
-    border: 3px solid #000;
-    box-shadow: 5px 5px 0 #000;
+    border: 3px solid var(--shadow-color);
+    border-radius: 12px;
+    box-shadow: 6px 6px 0 var(--shadow-color);
     color: #FFF;
-    text-shadow: 1px 1px 0 #000;
-    margin-top: 2rem;
+    text-shadow: 1px 1px 0 var(--shadow-color);
+    margin-top: 3rem;
+    position: relative;
 }
 
-/* Responsive design */
+.footer::before {
+    content: "EST. 1981";
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--sketch-orange);
+    color: white;
+    padding: 6px 16px;
+    font-size: 11px;
+    font-weight: bold;
+    border: 2px solid var(--shadow-color);
+    border-radius: 15px;
+}
+
+.footer h3 {
+    margin-top: 0;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.established {
+    font-weight: bold;
+    color: var(--highlight-bg);
+    text-shadow: 2px 2px 0 var(--shadow-color);
+    font-size: 1.1rem;
+    margin: 1rem 0;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
     .container {
-        padding: 10px;
+        padding: 15px;
+        margin: 10px;
     }
     
     .header h1 {
         font-size: 2rem;
+        letter-spacing: 2px;
     }
     
-    .nav-button {
+    .subtitle {
+        font-size: 1rem;
+    }
+    
+    .navigation {
+        padding: 0.5rem;
+    }
+    
+    .navigation wired-button {
         display: block;
         margin: 10px auto;
-        width: 80%;
+        width: 90%;
         max-width: 250px;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .hero-banner {
+        height: 250px;
+    }
+    
+    .logo-container {
+        max-width: 140px;
+    }
+    
+    .about-section {
+        padding: 1.5rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .header h1 {
+        font-size: 1.6rem;
+    }
+    
+    .navigation wired-button a {
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+    
+    .hero-banner {
+        height: 200px;
+    }
+    
+    .gallery-content {
+        padding: 1rem;
     }
 }
