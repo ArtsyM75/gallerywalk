@@ -385,6 +385,36 @@ wired-card img {
     z-index: 2;
 }
 
+/* Events Section */
+.events-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    margin: 1rem 0;
+}
+
+.upcoming-events {
+    padding: 1rem;
+}
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+wired-radio-group {
+    display: flex;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .container {
@@ -431,6 +461,10 @@ wired-card img {
     
     h2 {
         font-size: 1.5rem;
+    }
+    
+    .events-container {
+        grid-template-columns: 1fr;
     }
 }
 

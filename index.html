@@ -14,9 +14,9 @@
 <body>
     <div class="container">
         <header class="header">
-            <div class="logo-container">
+            <wired-card elevation="3" class="logo-container">
                 <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk Logo" class="logo-img">
-            </div>
+            </wired-card>
             <h1>EDMONTON GALLERY WALK</h1>
             <p class="subtitle">Promoting Art and Artists in Edmonton's Gallery District</p>
         </header>
@@ -29,11 +29,12 @@
         </nav>
 
         <main class="main-content" role="main">
-            <section id="about" class="about-section">
+            <wired-card elevation="2" class="about-section" fill="white">
                 <h2>About Edmonton Gallery Walk</h2>
                 <p>The Edmonton Gallery Walk, continuing a tradition that began in 1981, promotes art and artists within our community, focusing especially on work by Canadian artists.</p>
+                <wired-divider></wired-divider>
                 <p>The Gallery Walk is located <span class="highlight">west of the downtown core in the 124 Street area</span>, a vital business community with many quality restaurants, gift and clothing shops, bookstores, live theatre venues and specialty businesses.</p>
-            </section>
+            </wired-card>
 
             <section id="galleries" class="about-section">
                 <h2>Member Galleries</h2>
@@ -59,26 +60,64 @@
                 </div>
             </section>
 
-            <div class="hero-banner">
+            <wired-card elevation="3" class="hero-banner">
                 <img src="./images/7680-Summer.png" alt="Gallery Walk - Summer Exhibition" class="hero-img">
-            </div>
+            </wired-card>
 
             <section id="events" class="about-section">
                 <h2>Gallery Events</h2>
-                <p>Join us for our seasonal gallery walks and special exhibitions throughout the year.</p>
+                <div class="events-container">
+                    <wired-calendar selected="2025-06-08"></wired-calendar>
+                    <div class="upcoming-events">
+                        <wired-listbox>
+                            <wired-item value="1">Summer Exhibition - June 15</wired-item>
+                            <wired-item value="2">Art Walk Evening - June 22</wired-item>
+                            <wired-item value="3">Artist Meet & Greet - July 1</wired-item>
+                        </wired-listbox>
+                    </div>
+                </div>
             </section>
 
             <section id="contact" class="about-section">
                 <h2>Contact Us</h2>
                 <p>For information about Edmonton Gallery Walk events and exhibitions, please contact any of our member galleries.</p>
+                <wired-card elevation="2" class="contact-form">
+                    <form>
+                        <div class="form-group">
+                            <wired-input placeholder="Your Name" required></wired-input>
+                        </div>
+                        <div class="form-group">
+                            <wired-input type="email" placeholder="Your Email" required></wired-input>
+                        </div>
+                        <div class="form-group">
+                            <wired-textarea placeholder="Your Message" rows="4" required></wired-textarea>
+                        </div>
+                        <div class="form-group">
+                            <wired-radio-group selected="visitor">
+                                <wired-radio name="type" value="visitor">I'm a Visitor</wired-radio>
+                                <wired-radio name="type" value="artist">I'm an Artist</wired-radio>
+                            </wired-radio-group>
+                        </div>
+                        <div class="form-group">
+                            <wired-checkbox>Subscribe to newsletter</wired-checkbox>
+                        </div>
+                        <wired-button type="submit" elevation="2">Send Message</wired-button>
+                    </form>
+                </wired-card>
             </section>
         </main>
 
-        <footer class="footer">
+        <wired-card elevation="3" class="footer">
             <h3>Edmonton Gallery Walk</h3>
+            <wired-divider></wired-divider>
             <p class="established">Established 1981</p>
             <p>Celebrating over 40 years of art in Edmonton's Gallery District</p>
-        </footer>
+            <div class="social-links">
+                <wired-icon-button>🎨</wired-icon-button>
+                <wired-icon-button>📷</wired-icon-button>
+                <wired-icon-button>📱</wired-icon-button>
+            </div>
+        </wired-card>
     </div>
     <script src="./js/rough-effects.js"></script>
 </body>
