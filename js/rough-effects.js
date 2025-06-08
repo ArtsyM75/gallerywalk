@@ -1,19 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Simple header decoration
-    const canvas = document.createElement('canvas');
-    canvas.classList.add('rough-overlay');
-    document.querySelector('.header').appendChild(canvas);
-    
-    const rc = rough.canvas(canvas);
-    const header = document.querySelector('.header');
-    
-    canvas.width = header.offsetWidth;
-    canvas.height = header.offsetHeight;
-    
-    // Clean, minimal border
-    rc.rectangle(10, 10, canvas.width - 20, canvas.height - 20, {
-        stroke: '#000000',
-        strokeWidth: 1,
-        roughness: 1.5
-    });
+    // Wait for custom elements to be defined
+    setTimeout(() => {
+        try {
+            const header = document.querySelector('.header');
+            if (!header) return;
+
+            // Create canvas
+            const canvas = document.createElement('canvas');
+            canvas.classList.add('rough-overlay');
+            header.appendChild(canvas);
+
+            // Initialize RoughJS
+            const rc = rough.canvas(canvas);
+            if (!rc) return;
+
+            // Set dimensions
+            const rect = header.getBoundingClientRect();
+            canvas.width = rect.width;
+            canvas.height = rect.height;
+
+            // Draw border
+            rc.rectangle(10, 10, canvas.width - 20, canvas.height - 20, {
+                stroke: '#000000',
+                strokeWidth: 1,
+                roughness: 1.5,
+                fill: 'none'
+            });
+        } catch (error) {
+            console.warn('RoughJS decoration failed:', error);
+        }
+    }, 100);
 });

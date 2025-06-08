@@ -500,3 +500,19 @@ wired-radio-group {
         padding: 1rem;
     }
 }
+
+/* Fallback styles if Wired Elements fail */
+wired-card:not(:defined),
+wired-button:not(:defined) {
+    display: block;
+    border: 2px solid var(--accent-color);
+    border-radius: 8px;
+    padding: 1rem;
+    margin: 1rem 0;
+    background: white;
+}
+
+.rough-overlay {
+    pointer-events: none;
+    z-index: 1;
+}
