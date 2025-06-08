@@ -8,9 +8,11 @@
     <meta name="description" content="Edmonton Gallery Walk - Art galleries and exhibitions in Edmonton's 124 Street area">
     <meta name="keywords" content="Edmonton art, gallery walk, 124 Street, art exhibitions">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Load local libraries -->
+    <!-- Load libraries in correct order -->
     <script src="./lib/rough.js"></script>
-    <script type="module" src="./lib/wired-elements.js"></script>
+    <script defer src="./lib/wired-elements.js"></script>
+    <!-- Move rough-effects.js to head with defer -->
+    <script defer src="./js/rough-effects.js"></script>
 </head>
 <body>
     <div class="container">
@@ -122,6 +124,5 @@
             </div>
         </wired-card>
     </div>
-    <script src="./js/rough-effects.js"></script>
 </body>
 </html>
