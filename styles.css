@@ -516,3 +516,66 @@ wired-button:not(:defined) {
     pointer-events: none;
     z-index: 1;
 }
+
+.gallery-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.gallery-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+.gallery-item h3::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: var(--primary-color);
+    border-radius: 2px;
+}
+
+.gallery-item p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    margin: 0.5rem 0 1rem;
+    color: var(--text-color);
+}
+
+.gallery-item a {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    color: #FFF;
+    background: var(--primary-color);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+.gallery-item a:hover {
+    background: var(--accent-color);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    border: 2px solid var(--accent-color);
+}

@@ -15,6 +15,7 @@
 </head>
 <body>
     <div class="container">
+        <!-- Header Section -->
         <header class="header">
             <wired-card elevation="3" class="logo-container">
                 <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk Logo" class="logo-img">
@@ -23,6 +24,7 @@
             <p class="subtitle">Promoting Art and Artists in Edmonton's Gallery District</p>
         </header>
 
+        <!-- Navigation -->
         <nav class="navigation" role="navigation" aria-label="Main navigation">
             <wired-button elevation="2"><a href="#about">About Us</a></wired-button>
             <wired-button elevation="2"><a href="#galleries">Member Galleries</a></wired-button>
@@ -30,7 +32,9 @@
             <wired-button elevation="2"><a href="#contact">Contact</a></wired-button>
         </nav>
 
+        <!-- Main Content -->
         <main class="main-content" role="main">
+            <!-- About Section -->
             <section id="about">
                 <wired-card elevation="2" class="about-section" fill="white">
                     <h2>About Edmonton Gallery Walk</h2>
@@ -40,88 +44,53 @@
                 </wired-card>
             </section>
 
+            <!-- Galleries Section -->
             <section id="galleries">
                 <wired-card elevation="2" fill="white">
                     <h2>Member Galleries</h2>
-                    <div class="gallery-grid">
-                        <wired-card elevation="2" class="gallery-card">
-                            <img src="./images/WestEndGallery_800x.webp" alt="West End Gallery - Edmonton's Premier Canadian Art Gallery" loading="lazy">
-                            <div class="gallery-content">
-                                <h3>West End Gallery</h3>
-                                <p class="gallery-description">As one of Canada's oldest commercial art galleries, we proudly showcase the finest examples of Canadian art. We connect collectors and enthusiasts with exceptional works reflecting Canadian creativity's richness and diversity.</p>
-                                <div class="gallery-contact">
-                                    <p class="address">
-                                        10337 124 Street<br>
-                                        Edmonton, AB T5N 1R1<br>
-                                        Canada
-                                    </p>
-                                    <p class="contact-info">
-                                        <span class="phone">📞 (780) 488-4892</span><br>
-                                        <span class="email">✉️ art@westend.gallery</span>
-                                    </p>
-                                </div>
-                            </div>
+                    <div class="gallery-list">
+                        <wired-card class="gallery-item">
+                            <h3>Bearclaw Gallery</h3>
+                        </wired-card>
+                        <wired-card class="gallery-item">
+                            <h3>Bugera Matheson Gallery</h3>
+                        </wired-card>
+                        <wired-card class="gallery-item">
+                            <h3>Lando Gallery</h3>
+                        </wired-card>
+                        <wired-card class="gallery-item">
+                            <h3>Peter Robertson Gallery</h3>
+                        </wired-card>
+                        <wired-card class="gallery-item">
+                            <h3>West End Gallery</h3>
                         </wired-card>
                     </div>
                 </wired-card>
             </section>
 
+            <!-- Events Section -->
             <section id="events">
                 <wired-card elevation="2" fill="white">
                     <h2>Gallery Events</h2>
-                    <div class="events-container">
-                        <wired-calendar selected="2025-06-08"></wired-calendar>
-                        <div class="upcoming-events">
-                            <wired-listbox>
-                                <wired-item value="1">Summer Exhibition - June 15</wired-item>
-                                <wired-item value="2">Art Walk Evening - June 22</wired-item>
-                                <wired-item value="3">Artist Meet & Greet - July 1</wired-item>
-                            </wired-listbox>
-                        </div>
-                    </div>
+                    <!-- Events content will go here -->
                 </wired-card>
             </section>
 
-            <section id="contact" class="about-section">
-                <h2>Contact Us</h2>
-                <p>For information about Edmonton Gallery Walk events and exhibitions, please contact any of our member galleries.</p>
-                <wired-card elevation="2" class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <wired-input placeholder="Your Name" required></wired-input>
-                        </div>
-                        <div class="form-group">
-                            <wired-input type="email" placeholder="Your Email" required></wired-input>
-                        </div>
-                        <div class="form-group">
-                            <wired-textarea placeholder="Your Message" rows="4" required></wired-textarea>
-                        </div>
-                        <div class="form-group">
-                            <wired-radio-group selected="visitor">
-                                <wired-radio name="type" value="visitor">I'm a Visitor</wired-radio>
-                                <wired-radio name="type" value="artist">I'm an Artist</wired-radio>
-                            </wired-radio-group>
-                        </div>
-                        <div class="form-group">
-                            <wired-checkbox>Subscribe to newsletter</wired-checkbox>
-                        </div>
-                        <wired-button type="submit" elevation="2">Send Message</wired-button>
-                    </form>
+            <!-- Contact Section -->
+            <section id="contact">
+                <wired-card elevation="2" fill="white">
+                    <h2>Contact Us</h2>
+                    <!-- Contact form will go here -->
                 </wired-card>
             </section>
         </main>
 
-        <wired-card elevation="3" class="footer">
-            <h3>Edmonton Gallery Walk</h3>
-            <wired-divider></wired-divider>
-            <p class="established">Established 1981</p>
-            <p>Celebrating over 40 years of art in Edmonton's Gallery District</p>
-            <div class="social-links">
-                <wired-icon-button>🎨</wired-icon-button>
-                <wired-icon-button>📷</wired-icon-button>
-                <wired-icon-button>📱</wired-icon-button>
-            </div>
-        </wired-card>
+        <!-- Footer -->
+        <footer class="footer">
+            <wired-card elevation="2" fill="white">
+                <p>© 2025 Edmonton Gallery Walk. Established 1981.</p>
+            </wired-card>
+        </footer>
     </div>
 </body>
 </html>
