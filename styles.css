@@ -53,20 +53,6 @@ body {
     overflow: hidden;
 }
 
-.header::before {
-    content: "✦ GALLERY DISTRICT ✦";
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    background: var(--highlight-bg);
-    color: var(--shadow-color);
-    padding: 4px 12px;
-    font-size: 11px;
-    font-weight: bold;
-    border: 2px solid var(--shadow-color);
-    border-radius: 15px;
-    transform: rotate(15deg);
-}
 
 .logo-container {
     max-width: 180px;
