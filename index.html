@@ -3,95 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edmonton Gallery Walk</title>
-    <link rel="stylesheet" href="./styles.css">
-    <meta name="description" content="Edmonton Gallery Walk - Art galleries and exhibitions in Edmonton's 124 Street area">
-    <meta name="keywords" content="Edmonton art, gallery walk, 124 Street, art exhibitions">
+    <title>Edmonton Gallery Walk - Art & Culture on 124 Street</title>
+    <meta name="description" content="Discover Edmonton's vibrant art scene at Gallery Walk on 124 Street. Featuring local galleries, exhibitions, and cultural events since 1981.">
+    <meta name="keywords" content="Edmonton art galleries, 124 Street gallery walk, Canadian art exhibitions, Edmonton cultural events">
+    <meta property="og:title" content="Edmonton Gallery Walk">
+    <meta property="og:description" content="Promoting Art and Artists in Edmonton's Gallery District since 1981">
+    <meta property="og:type" content="website">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <!-- Load libraries in correct order -->
-    <script src="./lib/rough.js"></script>
-    <script type="module" src="./lib/wired-elements.js"></script>
-    <script defer src="./js/rough-effects.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Header Section -->
-        <header class="header">
-            <wired-card elevation="3" class="logo-container">
-                <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk Logo" class="logo-img">
-            </wired-card>
-            <h1>EDMONTON GALLERY WALK</h1>
-            <p class="subtitle">Promoting Art and Artists in Edmonton's Gallery District</p>
-        </header>
+    <a href="#main" class="skip-link">Skip to main content</a>
+    
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk Logo">
+                    <h1>Gallery Walk</h1>
+                </div>
+                <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#galleries">Galleries</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-        <!-- Navigation -->
-        <nav class="navigation" role="navigation" aria-label="Main navigation">
-            <wired-button elevation="2"><a href="#about">About Us</a></wired-button>
-            <wired-button elevation="2"><a href="#galleries">Member Galleries</a></wired-button>
-            <wired-button elevation="2"><a href="#events">Events</a></wired-button>
-            <wired-button elevation="2"><a href="#contact">Contact</a></wired-button>
-        </nav>
+    <main id="main">
+        <section class="hero">
+            <div class="container">
+                <h2>Edmonton Gallery Walk</h2>
+                <p>Discover art and culture in the heart of 124 Street since 1981</p>
+                <a href="#galleries" class="cta-button">Explore Galleries</a>
+            </div>
+        </section>
 
-        <!-- Main Content -->
-        <main class="main-content" role="main">
-            <!-- About Section -->
-            <section id="about">
-                <wired-card elevation="2" class="about-section" fill="white">
-                    <h2>About Edmonton Gallery Walk</h2>
-                    <p>The Edmonton Gallery Walk, continuing a tradition that began in 1981, promotes art and artists within our community, focusing especially on work by Canadian artists.</p>
-                    <wired-divider></wired-divider>
-                    <p>The Gallery Walk is located <span class="highlight">west of the downtown core in the 124 Street area</span>, a vital business community with many quality restaurants, gift and clothing shops, bookstores, live theatre venues and specialty businesses.</p>
-                </wired-card>
-            </section>
-
-            <!-- Galleries Section -->
-            <section id="galleries">
-                <wired-card elevation="2" fill="white">
-                    <h2>Member Galleries</h2>
-                    <div class="gallery-list">
-                        <wired-card class="gallery-item">
-                            <h3>Bearclaw Gallery</h3>
-                        </wired-card>
-                        <wired-card class="gallery-item">
-                            <h3>Bugera Lamb Gallery</h3>
-                        </wired-card>
-                        <wired-card class="gallery-item">
-                            <h3>Lando Gallery</h3>
-                        </wired-card>
-                        <wired-card class="gallery-item">
-                            <h3>Peter Robertson Gallery</h3>
-                        </wired-card>
-                        <wired-card class="gallery-item">
-                            <h3>West End Gallery</h3>
-                        </wired-card>
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>About Edmonton Gallery Walk</h2>
+                        <p>Since 1981, the Edmonton Gallery Walk has been a cornerstone of the city's vibrant arts community, promoting Canadian artists and fostering cultural enrichment.</p>
+                        <p>Located in the <span class="highlight">124 Street district</span>, our gallery walk brings together art enthusiasts, collectors, and curious visitors in a dynamic neighborhood filled with restaurants, boutiques, and creative spaces.</p>
+                        <p>Join us for regular exhibitions, artist talks, and special events that celebrate the best of contemporary and traditional art.</p>
                     </div>
-                </wired-card>
-            </section>
+                    <div class="about-image">
+                        <img src="./images/gallery-district.jpg" alt="124 Street Gallery District" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <!-- Events Section -->
-            <section id="events">
-                <wired-card elevation="2" fill="white">
-                    <h2>Gallery Events</h2>
-                    <!-- Events content will go here -->
-                </wired-card>
-            </section>
+        <section id="galleries" class="galleries">
+            <div class="container">
+                <h2>Member Galleries</h2>
+                <div class="gallery-grid">
+                    <article class="gallery-card">
+                        <div class="gallery-card-content">
+                            <h3>Bearclaw Gallery</h3>
+                            <p>Specializing in Indigenous art and contemporary works</p>
+                            <a href="#" class="gallery-link">Visit Gallery →</a>
+                        </div>
+                    </article>
+                    <article class="gallery-card">
+                        <div class="gallery-card-content">
+                            <h3>Bugera Lamb Gallery</h3>
+                            <p>Modern sculptures and mixed media installations</p>
+                            <a href="#" class="gallery-link">Visit Gallery →</a>
+                        </div>
+                    </article>
+                    <article class="gallery-card">
+                        <div class="gallery-card-content">
+                            <h3>Lando Gallery</h3>
+                            <p>Contemporary paintings and emerging artists</p>
+                            <a href="#" class="gallery-link">Visit Gallery →</a>
+                        </div>
+                    </article>
+                    <article class="gallery-card">
+                        <div class="gallery-card-content">
+                            <h3>Peter Robertson Gallery</h3>
+                            <p>Canadian landscapes and wildlife art</p>
+                            <a href="#" class="gallery-link">Visit Gallery →</a>
+                        </div>
+                    </article>
+                    <article class="gallery-card">
+                        <div class="gallery-card-content">
+                            <h3>West End Gallery</h3>
+                            <p>International contemporary art and photography</p>
+                            <a href="#" class="gallery-link">Visit Gallery →</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
 
-            <!-- Contact Section -->
-            <section id="contact">
-                <wired-card elevation="2" fill="white">
-                    <h2>Contact Us</h2>
-                    <!-- Contact form will go here -->
-                </wired-card>
-            </section>
-        </main>
+        <section id="events" class="events">
+            <div class="container">
+                <h2>Upcoming Events</h2>
+                <div class="event-card">
+                    <span class="event-date">March 15, 2025</span>
+                    <h3>Spring Gallery Walk</h3>
+                    <p>Join us for our seasonal gallery walk featuring new exhibitions, artist talks, and refreshments at all participating galleries.</p>
+                </div>
+                <div class="event-card">
+                    <span class="event-date">April 5, 2025</span>
+                    <h3>Artist Workshop Series</h3>
+                    <p>Hands-on workshops with local artists. Learn new techniques and create your own masterpiece.</p>
+                </div>
+            </div>
+        </section>
 
-        <!-- Footer -->
-        <footer class="footer">
-            <wired-card elevation="2" fill="white">
-                <p>© 2025 Edmonton Gallery Walk. Established 1981.</p>
-            </wired-card>
-        </footer>
-    </div>
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                        </svg>
+                        <span>124 Street, Edmonton, AB</span>
+                    </div>
+                    <div class="contact-item">
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <a href="mailto:info@edmontongallerywalk.com">info@edmontongallerywalk.com</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 Edmonton Gallery Walk. Established 1981.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                            <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998z"/>
+                            <circle cx="18.406" cy="5.594" r="1.44"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./js/main.js"></script>
 </body>
 </html>
