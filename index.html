@@ -12,6 +12,8 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Pico.css (minimal UI, no build) -->
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
 </head>
@@ -22,7 +24,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk Logo">
+                    <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk logo">
                     <h1>Gallery Walk</h1>
                 </div>
                 <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
@@ -61,7 +63,7 @@
                         <p>Visit the member galleries outside of official Gallery Walk's for regular exhibitions, artist talks, and special events that celebrate the best of Canadian contemporary and traditional art.</p>
                     </div>
                     <div class="about-image">
-                        <img src="/images/124 St Map 25.png" alt="124 Street Area" loading="lazy">
+                        <img src="/images/124-st-map-25.png" alt="Map of 124 Street area" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -75,7 +77,7 @@
                         <div class="gallery-card-content">
                             <h3>Bearclaw Gallery</h3>
                             <p>Specializing in Indigenous art and contemporary works.</p>
-                            <a href="https://bearclawgallery.com/" class="gallery-link">Visit Gallery →</a>
+                            <a href="https://bearclawgallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
                         </div>
                     </article>
 
@@ -83,7 +85,7 @@
                         <div class="gallery-card-content">
                             <h3>Bugera Lamb Gallery</h3>
                             <p>Contemporary artworks from artists across Canada.</p>
-                            <a href="https://bugeralambart.ca/" class="gallery-link">Visit Gallery →</a>
+                            <a href="https://bugeralambart.ca/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
                         </div>
                     </article>
 
@@ -91,7 +93,7 @@
                         <div class="gallery-card-content">
                             <h3>Lando Gallery</h3>
                             <p>Promotes recognized Canadian and International fine artists.</p>
-                            <a href="https://www.landogallery.com/" class="gallery-link">Visit Gallery →</a>
+                            <a href="https://www.landogallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
                         </div>
                     </article>
 
@@ -99,7 +101,7 @@
                         <div class="gallery-card-content">
                             <h3>MAUD Gallery</h3>
                             <p>Focusing on bright energetic modern artwork by contemporary artists.</p>
-                            <a href="https://www.maudgallery.com/" class="gallery-link">Visit Gallery →</a>
+                            <a href="https://www.maudgallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
                         </div>
                     </article>
 
@@ -107,7 +109,7 @@
                         <div class="gallery-card-content">
                             <h3>Peter Robertson Gallery</h3>
                             <p>Representing Canadian artists from different generations, focusing on contemporary painting, sculpture, printmaking, and photography.</p>
-                            <a href="https://www.probertsongallery.com/" class="gallery-link">Visit Gallery →</a>
+                            <a href="https://www.probertsongallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
                         </div>
                     </article>
 
@@ -115,7 +117,7 @@
                         <div class="gallery-card-content">
                             <h3>West End Gallery</h3>
                             <p>Proudly Showcasing Canadian Art Since 1975.</p>
-                            <a href="https://www.westendgalleryltd.com" class="gallery-link">Visit Gallery →</a>
+                            <a href="https://www.westendgalleryltd.com" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
                         </div>
                     </article>
                 </div>
@@ -183,5 +185,13 @@
     </footer>
 
     <script src="./js/main.js"></script>
+    <script>
+        function toggleMenu() {
+  const nav = document.getElementById('nav');
+  if (!nav) return;
+  const isHidden = nav.style.display === 'none' || getComputedStyle(nav).display === 'none';
+  nav.style.display = isHidden ? 'block' : 'none';
+}
+    </script>
 </body>
 </html>
