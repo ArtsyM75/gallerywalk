@@ -16,6 +16,55 @@
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles.css">
+    <style>
+        :root {
+  --header-height: 56px; /* adjust if header should be taller/shorter */
+}
+
+/* Make header sticky and compact so it doesn't cover content */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  background: var(--surface-1, #fff);
+  height: var(--header-height);
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+/* Trim header internal padding so header is visually smaller */
+header .header-content {
+  padding: 0.25rem 0;
+}
+
+/* Smaller logo so header stays compact */
+.logo img {
+  width: 48px; /* smaller than before */
+  height: auto;
+  object-fit: contain;
+}
+
+/* Reduce the site title size in the header */
+.logo h1 {
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1;
+}
+
+/* Ensure anchor jumps and in-page navigation account for the sticky header */
+html {
+  scroll-padding-top: calc(var(--header-height) + 0.5rem);
+}
+
+/* Mobile tweaks */
+@media (max-width: 480px) {
+  :root { --header-height: 56px; }
+  .logo img { width: 40px; }
+  .logo h1 { font-size: 0.95rem; }
+  header .header-content { padding: 0.25rem 0; }
+}
+    </style>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
