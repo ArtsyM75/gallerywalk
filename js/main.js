@@ -9,13 +9,6 @@ function toggleMenu() {
     
     nav.classList.toggle('nav-open');
     menuToggle.classList.toggle('active');
-    
-    // Prevent body scroll when menu is open on mobile
-    if (nav.classList.contains('nav-open')) {
-        document.body.style.overflow = 'hidden';
-    } else {
-        document.body.style.overflow = '';
-    }
 }
 
 // Close mobile menu when clicking nav links
@@ -24,11 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
             const nav = document.getElementById('nav');
-            const menuToggle = document.querySelector('.menu-toggle');
             if (nav && nav.classList.contains('nav-open')) {
                 nav.classList.remove('nav-open');
-                menuToggle.classList.remove('active');
-                document.body.style.overflow = '';
             }
         });
     });

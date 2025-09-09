@@ -17,6 +17,13 @@
   --surface-shadow: 0 8px 20px rgba(13,24,35,0.06);
   --radius: 10px;
   --max-width: 1100px;
+
+  --primary-color: #007acc;
+  --secondary-color: #0056b3;
+  --text-color: #333;
+  --border-color: #e0e0e0;
+  --background-alt: #f8f9fa;
+  --muted-color: #666;
 }
 
 /* Typography */
@@ -421,6 +428,22 @@ footer{
     top: 1rem;
 }
 
+/* Skip link accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--primary-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
 /* Focus styles */
 :focus {
     outline: 2px solid var(--primary);
@@ -461,5 +484,24 @@ footer{
     
     .about-image {
         order: -1;
+    }
+    
+    nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    nav.nav-open {
+        display: block;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        padding: 1rem;
     }
 }
