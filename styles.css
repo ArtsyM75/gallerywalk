@@ -124,8 +124,9 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero{
-  padding: 4.5rem 0;
-  background: linear-gradient(135deg, rgba(211,84,0,0.06), rgba(34,197,94,0.02));
+  padding: 6rem 0;
+  background: linear-gradient(135deg, var(--primary, #007acc) 0%, var(--secondary, #0056b3) 100%);
+  color: white;
   border-radius: 12px;
   margin: 1.25rem 0;
   text-align: center;
@@ -155,8 +156,8 @@ nav a:hover::after {
 
 .about-content {
     display: grid;
-    grid-template-columns: 1fr 360px;
-    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
     align-items: center;
 }
 
@@ -237,10 +238,18 @@ nav a:hover::after {
 }
 .gallery-link:hover{ opacity: .95; transform: translateY(-2px); }
 .gallery-address {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--muted-color, #666);
-    margin-bottom: 0.75rem;
+    margin: 0.5rem 0;
     font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+
+.gallery-address::before {
+    content: "📍";
+    margin-right: 0.5rem;
+    font-size: 0.9rem;
 }
 
 /* Events Section */
@@ -365,4 +374,14 @@ footer{
 @media (max-width:480px){
   .container{ padding: 0 0.75rem; }
   .cta-button{ width: 100%; text-align:center; display:block; }
+}
+@media (max-width: 768px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .about-image {
+        order: -1;
+    }
 }
