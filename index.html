@@ -18,111 +18,6 @@
     <link rel="stylesheet" href="./styles.css">
     <link rel="preload" href="./images/ShoeREVTYPE.jpg" as="image">
     <link rel="preload" href="./images/124-St-Map-25.png" as="image">
-    <style>
-        :root {
-  --header-height: 56px; /* adjust if header should be taller/shorter */
-}
-
-/* Make header sticky and compact so it doesn't cover content */
-header {
-  position: sticky;
-  top: 0;
-  z-index: 9999;
-  background: var(--surface-1, #fff);
-  height: var(--header-height);
-  display: flex;
-  align-items: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-}
-
-/* Trim header internal padding so header is visually smaller */
-header .header-content {
-  padding: 0.25rem 0;
-}
-
-/* Smaller logo so header stays compact */
-.logo img {
-  width: 48px; /* smaller than before */
-  height: auto;
-  object-fit: contain;
-}
-.hero {
-    padding: 6rem 0;
-    text-align: center;
-    background: linear-gradient(135deg, #38a39c 0%, #2c827b 100%);
-    color: white;
-}
-
-.hero h1 {
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-size: 3.5rem;
-    margin-bottom: 1rem;
-}
-
-.hero p {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-    font-size: 1.25rem;
-    opacity: 0.95;
-}
-
-.cta-button {
-    background: white;
-    color: #1a365d;
-    padding: 1rem 2rem;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    margin-top: 1rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-}
-
-.cta-button:hover {
-    background: #f8f9fa;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
-    color: #0056b3;
-}
-
-/* Alternative: Darker background option */
-.hero-alt {
-    background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-}
-
-/* Mobile responsive */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .hero p {
-        font-size: 1.1rem;
-    }
-    
-    .hero {
-        padding: 4rem 0;
-    }
-}
-/* Reduce the site title size in the header */
-.logo h1 {
-  font-size: 1rem;
-  margin: 0;
-  line-height: 1;
-}
-
-/* Ensure anchor jumps and in-page navigation account for the sticky header */
-html {
-  scroll-padding-top: calc(var(--header-height) + 0.5rem);
-}
-
-/* Mobile tweaks */
-@media (max-width: 480px) {
-  :root { --header-height: 56px; }
-  .logo img { width: 40px; }
-  .logo h1 { font-size: 0.95rem; }
-  header .header-content { padding: 0.25rem 0; }
-}
-    </style>
 </head>
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
@@ -134,7 +29,7 @@ html {
                     <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk logo">
                     <h1>Gallery Walk</h1>
                 </div>
-                <button class="menu-toggle" aria-label="Toggle menu" onclick="toggleMenu()">
+                <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -254,6 +149,26 @@ html {
             </div>
         </section>
 
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2>Contact Us</h2>
+                <p>For more information about the Edmonton Gallery Walk, please reach out to any of our member galleries or follow us on social media.</p>
+                <div class="social-links" style="margin-top: 2rem;">
+                    <a href="https://www.facebook.com/edmontongallerywalk/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/yeggallerywalk/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
+                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
+                            <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998z"/>
+                            <circle cx="18.406" cy="5.594" r="1.44"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
     
     </main>
 
@@ -280,13 +195,5 @@ html {
     </footer>
 
     <script src="./js/main.js"></script>
-    <script>
-        function toggleMenu() {
-  const nav = document.getElementById('nav');
-  if (!nav) return;
-  const isHidden = nav.style.display === 'none' || getComputedStyle(nav).display === 'none';
-  nav.style.display = isHidden ? 'block' : 'none';
-}
-    </script>
 </body>
 </html>
