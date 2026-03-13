@@ -39,22 +39,23 @@ document.addEventListener('DOMContentLoaded', function() {
 // Smooth scrolling for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        e.preventDefault();
         const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-            // Close mobile menu if open
-            const nav = document.getElementById('nav');
-            if (nav) {
-                nav.classList.remove('nav-open');
-                const toggle = document.querySelector('.menu-toggle');
-                if (toggle) {
-                    toggle.classList.remove('active');
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
+        if (!target) return;
+
+        e.preventDefault();
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        target.scrollIntoView({
+            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            block: 'start'
+        });
+        // Close mobile menu if open
+        const nav = document.getElementById('nav');
+        if (nav) {
+            nav.classList.remove('nav-open');
+            const toggle = document.querySelector('.menu-toggle');
+            if (toggle) {
+                toggle.classList.remove('active');
+                toggle.setAttribute('aria-expanded', 'false');
             }
         }
     });
