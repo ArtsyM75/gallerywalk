@@ -9,6 +9,7 @@ function toggleMenu() {
     
     nav.classList.toggle('nav-open');
     menuToggle.classList.toggle('active');
+    menuToggle.setAttribute('aria-expanded', nav.classList.contains('nav-open') ? 'true' : 'false');
 }
 
 // Attach menu toggle event listener
@@ -26,7 +27,10 @@ document.addEventListener('DOMContentLoaded', function() {
             if (nav && nav.classList.contains('nav-open')) {
                 nav.classList.remove('nav-open');
                 const toggle = document.querySelector('.menu-toggle');
-                if (toggle) toggle.classList.remove('active');
+                if (toggle) {
+                    toggle.classList.remove('active');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
             }
         });
     });
@@ -47,7 +51,10 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             if (nav) {
                 nav.classList.remove('nav-open');
                 const toggle = document.querySelector('.menu-toggle');
-                if (toggle) toggle.classList.remove('active');
+                if (toggle) {
+                    toggle.classList.remove('active');
+                    toggle.setAttribute('aria-expanded', 'false');
+                }
             }
         }
     });
