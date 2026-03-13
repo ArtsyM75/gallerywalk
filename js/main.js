@@ -77,7 +77,8 @@ const observer = new IntersectionObserver(function(entries) {
 
 // Observe gallery cards and event cards
 document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.gallery-card, .event-card').forEach(el => {
+    document.querySelectorAll('.gallery-card, .event-card').forEach((el, index) => {
+        el.style.animationDelay = `${Math.min(index * 80, 420)}ms`;
         observer.observe(el);
     });
 });
