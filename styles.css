@@ -102,12 +102,13 @@ header .header-content {
   padding: 0.25rem 0;
 }
 
-.logo h1 {
+.logo-title {
     font-family: 'Playfair Display', serif;
     font-size: 1rem;
     font-weight: 700;
     margin: 0;
     line-height: 1;
+  color: #000000;
 }
 
 /* Navigation */
@@ -543,8 +544,8 @@ footer{
 /* Responsive */
 @media (max-width: 880px) {
   .about-content { grid-template-columns: 1fr; }
-  .menu-toggle { display: inline-flex; }
-  nav#nav {
+  .js .menu-toggle { display: inline-flex; }
+  .js nav#nav {
     display: none;
     position: absolute;
     top: 100%;
@@ -553,10 +554,26 @@ footer{
     background: white;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
-  nav#nav.nav-open { display: block; }
+  .js nav#nav.nav-open { display: block; }
   nav#nav ul {
     flex-direction: column;
     padding: 1rem;
+    gap: 1rem;
+  }
+  html.no-js header {
+    height: auto;
+    padding: 0.5rem 0;
+  }
+  html.no-js .header-content {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+  html.no-js nav#nav {
+    width: 100%;
+  }
+  html.no-js nav#nav ul {
+    padding: 0.5rem 0 0;
+    gap: 0.75rem;
   }
   .gallery-grid { 
     grid-template-columns: repeat(2, 1fr);
@@ -577,7 +594,7 @@ footer{
   .cta-button{ width: 100%; text-align:center; display:block; font-size: 1.1rem; }
   :root { --header-height: 56px; }
   .logo img { width: 40px; }
-  .logo h1 { font-size: 0.95rem; }
+  .logo-title { font-size: 0.95rem; }
   header .header-content { padding: 0.25rem 0; }
   body { font-size: 16px; }
   .about-text p { font-size: 1rem; }

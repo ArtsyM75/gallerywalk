@@ -1,5 +1,9 @@
 // Edmonton Gallery Walk - Main JavaScript
 
+function getScrollBehavior() {
+    return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+}
+
 // Mobile menu toggle
 function toggleMenu() {
     const nav = document.getElementById('nav');
@@ -36,16 +40,28 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+// Move keyboard focus when using the skip link
+document.querySelector('.skip-link')?.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+
+    e.preventDefault();
+    target.scrollIntoView({
+        behavior: 'auto',
+        block: 'start'
+    });
+    target.focus({ preventScroll: true });
+});
+
 // Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const target = document.querySelector(this.getAttribute('href'));
         if (!target) return;
 
         e.preventDefault();
-        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
         target.scrollIntoView({
-            behavior: prefersReducedMotion ? 'auto' : 'smooth',
+            behavior: getScrollBehavior(),
             block: 'start'
         });
         // Close mobile menu if open
