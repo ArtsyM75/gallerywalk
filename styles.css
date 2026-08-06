@@ -73,6 +73,8 @@ html {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo img {
@@ -109,6 +111,10 @@ header .header-content {
     margin: 0;
     line-height: 1;
   color: #000000;
+}
+
+.logo:hover .logo-title {
+  color: var(--primary-dark);
 }
 
 /* Navigation */
@@ -160,44 +166,62 @@ nav a:hover::after {
 
 /* Hero Section */
 .hero {
-    padding: 6rem 0;
-    text-align: center;
+    padding: 7rem 0 6.5rem;
+    text-align: left;
     background:
-      radial-gradient(circle at 15% 15%, rgba(255, 255, 255, 0.18), transparent 35%),
-      radial-gradient(circle at 85% 10%, rgba(255, 255, 255, 0.12), transparent 40%),
-      linear-gradient(135deg, #0d7f7a 0%, #0b6865 55%, #09514f 100%);
+      linear-gradient(90deg, rgba(3, 34, 33, 0.86) 0%, rgba(6, 66, 63, 0.72) 48%, rgba(8, 95, 91, 0.38) 100%),
+      url("./images/WestEndGallery_800x.webp") center / cover no-repeat;
     color: white;
     position: relative;
     overflow: hidden;
 }
 
-.hero::before,
-.hero::after {
+.hero::before {
   content: "";
   position: absolute;
-  width: 420px;
-  height: 420px;
-  border-radius: 50%;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0.35) 100%);
   pointer-events: none;
 }
 
-.hero::before {
-  background: radial-gradient(circle, rgba(255,255,255,0.14) 0%, rgba(255,255,255,0) 70%);
-  top: -220px;
-  left: -140px;
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 6px;
+  background: linear-gradient(90deg, var(--accent), #f1c35f, var(--primary));
 }
 
-.hero::after {
-  background: radial-gradient(circle, rgba(202,107,44,0.20) 0%, rgba(202,107,44,0) 70%);
-  bottom: -260px;
-  right: -120px;
+.hero .container {
+  position: relative;
+  z-index: 1;
 }
 
 .hero h1 {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 3.8rem;
+    max-width: 780px;
+    margin: 0 0 1rem;
     line-height: 1.2;
+}
+
+.hero-kicker {
+    color: #ffe1bf;
+    font-weight: 700;
+    margin: 0 0 0.75rem;
+}
+
+.hero-date {
+    color: #ffffff;
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.25;
+    margin: 0 0 1rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.65);
 }
 
 .hero .hero-lead {
@@ -206,7 +230,7 @@ nav a:hover::after {
     opacity: 0.97;
     line-height: 1.6;
     max-width: 760px;
-    margin: 0 auto;
+    margin: 0;
 }
 
 .hero-actions {
@@ -408,8 +432,10 @@ nav a:hover::after {
 
 /* Events Section */
 .events {
-    padding: 4rem 0;
-    background: var(--bg-light);
+  padding: 5rem 0;
+  background:
+    linear-gradient(135deg, rgba(247, 243, 234, 0.96), rgba(255, 253, 248, 0.98)),
+    url("./images/7680-Autumn.png") center bottom / min(760px, 90%) auto no-repeat;
 }
 
 .events h2 {
@@ -420,7 +446,7 @@ nav a:hover::after {
     line-height: 1.3;
 }
 
-.event-card{
+.event-card {
   background: linear-gradient(180deg, #fff 0%, #fffaf2 100%);
   border: 1px solid #f0dfc7;
   border-left: 6px solid var(--accent);
@@ -430,9 +456,30 @@ nav a:hover::after {
   box-shadow: 0 6px 12px rgba(2,6,23,0.04);
 }
 
+.event-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.75fr);
+  gap: 0;
+  overflow: hidden;
+  padding: 0;
+  border-left: 0;
+  box-shadow: 0 18px 40px rgba(13,24,35,0.12);
+}
+
+.event-main {
+  padding: 2rem;
+}
+
+.event-kicker {
+  color: var(--primary-dark);
+  display: block;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
 .event-card h3 {
-  font-size: 1.5rem;
-  margin: 0.5rem 0;
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
   line-height: 1.4;
 }
 
@@ -445,7 +492,76 @@ nav a:hover::after {
 .event-date{ 
   color:var(--accent); 
   font-weight:700;
-  font-size: 1rem;
+  font-size: 1.25rem;
+  margin: 0 0 0.75rem;
+}
+
+.event-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.event-link {
+  background: var(--primary);
+  color: #ffffff;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  display: inline-block;
+  font-weight: 700;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+}
+
+.event-link:hover {
+  background: var(--primary-dark);
+  border-color: var(--primary-dark);
+  color: #ffffff;
+}
+
+.event-link.secondary {
+  background: transparent;
+  color: var(--primary-dark);
+}
+
+.event-link.secondary:hover {
+  background: rgba(11, 122, 117, 0.08);
+  color: var(--primary-dark);
+}
+
+.event-details {
+  background: #0c4c49;
+  color: #ffffff;
+  display: grid;
+  gap: 0;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+.event-details div {
+  border-bottom: 1px solid rgba(255,255,255,0.18);
+  padding: 1rem 0;
+}
+
+.event-details div:first-child {
+  padding-top: 0;
+}
+
+.event-details div:last-child {
+  border-bottom: 0;
+  padding-bottom: 0;
+}
+
+.event-details dt {
+  color: #ffe1bf;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.event-details dd {
+  margin: 0;
+  color: #ffffff;
 }
 
 /* Contact Section */
@@ -486,6 +602,28 @@ nav a:hover::after {
     width: 24px;
     height: 24px;
     color: var(--primary);
+}
+
+.social-links {
+  align-items: center;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social-links a {
+  color: var(--primary-dark);
+  display: inline-flex;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.social-links a:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-social-links {
+  margin-top: 2rem;
 }
 
 /* Footer */
@@ -585,6 +723,7 @@ footer{
 }
 @media (max-width:880px){
   .hero h1{ font-size: 2.25rem; }
+  .hero-date { font-size: 1.55rem; }
   :root{ --max-width: 920px; }
   body { font-size: 17px; }
 }
@@ -622,13 +761,31 @@ footer{
       font-size: 2rem;
         line-height: 1.2;
     }
+
+    .hero {
+      padding: 4.5rem 0;
+      text-align: center;
+    }
     
     .hero .hero-lead {
         font-size: 1.2rem;
         line-height: 1.6;
+      margin: 0 auto;
     }
-    
-    .hero {
-        padding: 4rem 0;
+
+    .event-feature {
+      grid-template-columns: 1fr;
+    }
+
+    .event-main {
+      padding: 1.5rem;
+    }
+
+    .event-actions {
+      flex-direction: column;
+    }
+
+    .event-link {
+      text-align: center;
     }
 }
