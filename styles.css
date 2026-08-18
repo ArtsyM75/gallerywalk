@@ -424,8 +424,8 @@ nav a:hover::after {
 .map-image-viewport {
   background: #ffffff;
   display: block;
-  max-height: 680px;
-  overflow: auto;
+  max-height: none;
+  overflow: visible;
 }
 
 .about-image figcaption {
@@ -923,7 +923,7 @@ footer{
   }
   .gallery-card h3 { font-size: 1.25rem; }
   .map-key { columns: 1; }
-  .map-image-viewport { max-height: 520px; }
+  .map-image-viewport { max-height: none; }
 }
 @media (max-width: 768px) {
     .about-content {
@@ -1327,7 +1327,7 @@ nav a::after {
 }
 
 .map-image-viewport {
-  max-height: 620px;
+  max-height: none;
 }
 
 .galleries {
