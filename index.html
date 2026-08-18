@@ -4,38 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script>document.documentElement.classList.replace('no-js', 'js');</script>
+
     <title>Edmonton Gallery Walk - Art & Culture on 124 Street</title>
-    <meta name="description" content="Discover Edmonton's vibrant art scene at Gallery Walk on 124 Street. Promoting premiere local art galleries who host regular exhibitions, and cultural events since 1981.">
-    <meta name="keywords" content="Edmonton art galleries, 124 Street gallery walk, Canadian art exhibitions, Edmonton cultural events">
+    <meta name="description" content="Discover Edmonton Gallery Walk on 124 Street, where independent galleries present Canadian art, exhibitions, and seasonal Gallery Walk weekends.">
+    <meta name="theme-color" content="#085f5b">
+
     <meta property="og:title" content="Edmonton Gallery Walk">
     <meta property="og:description" content="Promoting Art and Artists in Edmonton's 124 Street Area since 1981">
     <meta property="og:type" content="website">
-    <link rel="icon" type="image/png" href="./images/124-St-Map-25.png">
+    <meta property="og:url" content="https://www.edmontongallerywalk.com/">
+    <meta property="og:image" content="https://www.edmontongallerywalk.com/images/gallery-walk-autumn.webp">
+    <meta property="og:image:alt" content="An illustrated autumn walk past galleries on Edmonton's 124 Street">
+
+    <link rel="canonical" href="https://www.edmontongallerywalk.com/">
+    <link rel="icon" type="image/png" href="./images/favicon.png">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Pico.css (minimal UI, no build) -->
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@1.*/css/pico.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="./styles.css">
-    <link rel="preload" href="./images/ShoeREVTYPE.jpg" as="image">
-    <link rel="preload" href="./images/WestEndGallery_800x.webp" as="image">
-    <link rel="preload" href="./images/124-St-Map-25.png" as="image">
+    <link rel="preload" href="./images/gallery-walk-autumn.webp" as="image" type="image/webp" fetchpriority="high">
 </head>
+
 <body>
     <a href="#main" class="skip-link">Skip to main content</a>
-    
+
     <header>
         <div class="container">
             <div class="header-content">
                 <a href="#main" class="logo" aria-label="Edmonton Gallery Walk home">
-                    <img src="./images/ShoeREVTYPE.jpg" alt="Edmonton Gallery Walk logo">
+                    <img src="./images/gallery-walk-logo.webp" alt="" width="192" height="80">
                     <span class="logo-title">Gallery Walk</span>
                 </a>
-                <button class="menu-toggle" aria-label="Toggle menu" id="menuToggle" aria-controls="nav" aria-expanded="false">
+
+                <button
+                    class="menu-toggle"
+                    type="button"
+                    aria-label="Open menu"
+                    id="menuToggle"
+                    aria-controls="nav"
+                    aria-expanded="false"
+                >
                     <span></span>
                     <span></span>
                     <span></span>
                 </button>
+
                 <nav id="nav">
                     <ul>
                         <li><a href="#about">About</a></li>
@@ -53,27 +68,68 @@
             <div class="container">
                 <p class="hero-kicker">Gallery Walk Weekend</p>
                 <h1>Edmonton Gallery Walk</h1>
-                 <p class="hero-date">September 19 &amp; 20, 2026</p>
-                 <p class="hero-lead">Meet the member galleries, explore new exhibitions, and spend a fall weekend with art and culture in the heart of the 124 Street area.</p>
-                 <div class="hero-actions">
+                <p class="hero-date">September 19 &amp; 20, 2026</p>
+                <p class="hero-lead">Meet the member galleries, explore new exhibitions, and spend a fall weekend with art and culture in the heart of the 124 Street area.</p>
+
+                <div class="hero-actions">
                     <a href="#galleries" class="cta-button">Explore Galleries</a>
                     <a href="#events" class="cta-button secondary">View Event Details</a>
-                 </div>
-             </div>
-         </section>
+                </div>
+            </div>
+        </section>
 
         <section id="about" class="about">
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
                         <h2>About Edmonton Gallery Walk</h2>
+
                         <p>Since 1981, the Edmonton Gallery Walk has been a cornerstone of the city's vibrant arts community, promoting Canadian artists and fostering cultural enrichment.</p>
+
                         <p>The Gallery Walk is proudly hosted by <span class="highlight">independent small businesses along 124 Street</span> — a walkable arts neighbourhood just west of Edmonton's downtown core, filled with fine art galleries, restaurants, boutiques, and public art murals.</p>
+
                         <p>Two official unguided walks take place each year — Spring and Fall — bringing together art enthusiasts, collectors, and curious visitors to meet local creators and discover local, provincial, and Canadian contemporary art. Member galleries also welcome visitors year-round with regular exhibitions and special events.</p>
                     </div>
-                    <div class="about-image">
-                        <img src="images/124-St-Map-25.png" alt="Map of 124 Street area" loading="lazy">
-                    </div>
+
+                    <details class="map-details">
+                        <summary>View Gallery Walk map and location key</summary>
+
+                        <figure class="about-image">
+                            <div
+                                class="map-image-viewport"
+                                role="region"
+                                aria-label="Scrollable Gallery Walk map"
+                                tabindex="0"
+                            >
+                                <img
+                                    src="./images/124-St-Map-25.png"
+                                    width="1000"
+                                    height="3100"
+                                    alt="Walking map of six member galleries along Edmonton's 124 Street, from Jasper Avenue north to 107 Avenue"
+                                    aria-describedby="map-caption"
+                                    loading="lazy"
+                                    decoding="async"
+                                >
+                            </div>
+
+                            <figcaption id="map-caption">
+                                <strong>Map key</strong>
+
+                                <ol class="map-key">
+                                    <li>Bugera Lamb Gallery</li>
+                                    <li>West End Gallery</li>
+                                    <li>Peter Robertson Gallery</li>
+                                    <li>Lando Gallery</li>
+                                    <li>Bearclaw Gallery</li>
+                                    <li>MAUD Gallery</li>
+                                </ol>
+
+                                <a class="map-open-link" href="./images/124-St-Map-25.png">
+                                    Open full-size map
+                                </a>
+                            </figcaption>
+                        </figure>
+                    </details>
                 </div>
             </div>
         </section>
@@ -81,13 +137,16 @@
         <section id="galleries" class="galleries">
             <div class="container">
                 <h2>Member Galleries</h2>
+
                 <div class="gallery-grid">
                     <article class="gallery-card">
                         <div class="gallery-card-content">
                             <h3>Bearclaw Gallery</h3>
                             <p class="gallery-address">10403 124 Street NW, Edmonton, AB</p>
                             <p>Celebrating fifty years in Canadian art, Bearclaw is an iconic stop honouring First Nations, Métis, and Inuit art through painting, sculpture, beadwork, and jewellery.</p>
-                            <a href="https://bearclawgallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
+                            <a href="https://bearclawgallery.com/" class="gallery-link">
+                                Visit Bearclaw Gallery →
+                            </a>
                         </div>
                     </article>
 
@@ -96,7 +155,9 @@
                             <h3>Bugera Lamb Gallery</h3>
                             <p class="gallery-address">10110 124 St #1b, Edmonton, AB</p>
                             <p>A carefully curated selection of contemporary works from artists across Canada, contributing to Edmonton's art scene since 1992.</p>
-                            <a href="https://bugeralambart.ca/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
+                            <a href="https://bugeralambart.ca/" class="gallery-link">
+                                Visit Bugera Lamb Gallery →
+                            </a>
                         </div>
                     </article>
 
@@ -105,7 +166,9 @@
                             <h3>Lando Gallery</h3>
                             <p class="gallery-address">10345 124 Street NW, Edmonton, AB</p>
                             <p>Showcasing a wide range of artistic styles, from classical realism to contemporary abstracts, with works by recognized Canadian and international fine artists.</p>
-                            <a href="https://www.landogallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
+                            <a href="https://www.landogallery.com/" class="gallery-link">
+                                Visit Lando Gallery →
+                            </a>
                         </div>
                     </article>
 
@@ -114,7 +177,9 @@
                             <h3>MAUD Gallery</h3>
                             <p class="gallery-address">10643 124 Street NW #307, Edmonton, AB</p>
                             <p>Focusing on bright energetic modern artwork by contemporary artists.</p>
-                            <a href="https://www.maudgallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
+                            <a href="https://www.maudgallery.com/" class="gallery-link">
+                                Visit MAUD Gallery →
+                            </a>
                         </div>
                     </article>
 
@@ -123,7 +188,9 @@
                             <h3>Peter Robertson Gallery</h3>
                             <p class="gallery-address">10332 124 Street NW, Edmonton, AB</p>
                             <p>One of Canada's leading contemporary galleries, representing Canadian artists across generations with bold and innovative painting, sculpture, printmaking, and photography.</p>
-                            <a href="https://www.probertsongallery.com/" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
+                            <a href="https://www.probertsongallery.com/" class="gallery-link">
+                                Visit Peter Robertson Gallery →
+                            </a>
                         </div>
                     </article>
 
@@ -132,7 +199,9 @@
                             <h3>West End Gallery</h3>
                             <p class="gallery-address">10337 124 Street NW, Edmonton, AB</p>
                             <p>Celebrating fifty years in Canadian art, West End Gallery proudly showcases local, provincial, and Canadian artists across contemporary and traditional styles.</p>
-                            <a href="https://www.westendgalleryltd.com" class="gallery-link" target="_blank" rel="noopener noreferrer">Visit Gallery →</a>
+                            <a href="https://www.westendgalleryltd.com" class="gallery-link">
+                                Visit West End Gallery →
+                            </a>
                         </div>
                     </article>
                 </div>
@@ -142,26 +211,31 @@
         <section id="events" class="events">
             <div class="container">
                 <h2>Upcoming Events</h2>
+
                 <div class="event-card event-feature">
                     <div class="event-main">
                         <span class="event-kicker">Gallery Walk Weekend</span>
                         <h3>Fall Gallery Walk</h3>
                         <p class="event-date">September 19 &amp; 20, 2026</p>
                         <p>Join us for the upcoming gallery walk weekend featuring new exhibitions, local artists, and member galleries throughout the 124 Street area.</p>
+
                         <div class="event-actions">
                             <a href="#galleries" class="event-link">Member Galleries</a>
                             <a href="#about" class="event-link secondary">Map &amp; Neighbourhood</a>
                         </div>
                     </div>
+
                     <dl class="event-details" aria-label="Fall Gallery Walk details">
                         <div>
                             <dt>Saturday</dt>
                             <dd>Individual gallery hours</dd>
                         </div>
+
                         <div>
                             <dt>Sunday</dt>
                             <dd>Noon to 4pm</dd>
                         </div>
+
                         <div>
                             <dt>Location</dt>
                             <dd>124 Street area, Edmonton</dd>
@@ -175,14 +249,36 @@
             <div class="container">
                 <h2>Contact Us</h2>
                 <p>For more information about the Edmonton Gallery Walk, please reach out to any of our member galleries or follow us on social media.</p>
+
                 <div class="social-links contact-social-links">
-                    <a href="https://www.facebook.com/edmontongallerywalk/" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+                    <a
+                        href="https://www.facebook.com/edmontongallerywalk/"
+                        aria-label="Edmonton Gallery Walk on Facebook"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/yeggallerywalk/" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                        <svg width="32" height="32" fill="currentColor" viewBox="0 0 24 24">
+
+                    <a
+                        href="https://www.instagram.com/yeggallerywalk/"
+                        aria-label="Edmonton Gallery Walk on Instagram"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            width="32"
+                            height="32"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
                             <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998z"/>
                             <circle cx="18.406" cy="5.594" r="1.44"/>
@@ -191,21 +287,42 @@
                 </div>
             </div>
         </section>
-    
     </main>
 
     <footer>
         <div class="container">
             <div class="footer-content">
                 <p>&copy; 2026 Edmonton Gallery Walk. Established 1981.</p>
+
                 <div class="social-links">
-                    <a href="https://www.facebook.com/edmontongallerywalk/" aria-label="Facebook">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+                    <a
+                        href="https://www.facebook.com/edmontongallerywalk/"
+                        aria-label="Edmonton Gallery Walk on Facebook"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                     </a>
-                    <a href="https://www.instagram.com/yeggallerywalk/" aria-label="Instagram">
-                        <svg width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+
+                    <a
+                        href="https://www.instagram.com/yeggallerywalk/"
+                        aria-label="Edmonton Gallery Walk on Instagram"
+                    >
+                        <svg
+                            aria-hidden="true"
+                            focusable="false"
+                            width="24"
+                            height="24"
+                            fill="currentColor"
+                            viewBox="0 0 24 24"
+                        >
                             <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
                             <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.162a3.999 3.999 0 110-7.998 3.999 3.999 0 010 7.998z"/>
                             <circle cx="18.406" cy="5.594" r="1.44"/>
