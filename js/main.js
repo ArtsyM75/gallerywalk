@@ -1,101 +1,64 @@
 // Edmonton Gallery Walk - Main JavaScript
 
-function getScrollBehavior() {
-    return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
-}
+const nav = document.getElementById('nav');
+const menuToggle = document.getElementById('menuToggle');
+const siteHeader = document.querySelector('header');
 
-// Mobile menu toggle
-function toggleMenu() {
-    const nav = document.getElementById('nav');
-    const menuToggle = document.querySelector('.menu-toggle');
-    
+function setMenuState(isOpen, returnFocus = false) {
     if (!nav || !menuToggle) return;
-    
-    nav.classList.toggle('nav-open');
-    menuToggle.classList.toggle('active');
-    menuToggle.setAttribute('aria-expanded', nav.classList.contains('nav-open') ? 'true' : 'false');
+
+    nav.classList.toggle('nav-open', isOpen);
+    menuToggle.classList.toggle('active', isOpen);
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+
+    if (returnFocus) menuToggle.focus();
 }
 
-// Attach menu toggle event listener
-document.addEventListener('DOMContentLoaded', function() {
-    const menuToggle = document.getElementById('menuToggle');
-    if (menuToggle) {
-        menuToggle.addEventListener('click', toggleMenu);
+menuToggle?.addEventListener('click', () => {
+    setMenuState(menuToggle.getAttribute('aria-expanded') !== 'true');
+});
+
+nav?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setMenuState(false));
+});
+
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && menuToggle?.getAttribute('aria-expanded') === 'true') {
+        setMenuState(false, true);
     }
-    
-    // Close mobile menu when clicking nav links
-    const navLinks = document.querySelectorAll('#nav a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            const nav = document.getElementById('nav');
-            if (nav && nav.classList.contains('nav-open')) {
-                nav.classList.remove('nav-open');
-                const toggle = document.querySelector('.menu-toggle');
-                if (toggle) {
-                    toggle.classList.remove('active');
-                    toggle.setAttribute('aria-expanded', 'false');
-                }
+});
+
+document.addEventListener('click', (event) => {
+    if (
+        menuToggle?.getAttribute('aria-expanded') === 'true' &&
+        siteHeader &&
+        !siteHeader.contains(event.target)
+    ) {
+        setMenuState(false);
+    }
+});
+
+const desktopQuery = window.matchMedia('(min-width: 881px)');
+desktopQuery.addEventListener?.('change', (event) => {
+    if (event.matches) setMenuState(false);
+});
+
+if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
+                observer.unobserve(entry.target);
             }
         });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-});
 
-// Move keyboard focus when using the skip link
-document.querySelector('.skip-link')?.addEventListener('click', function (e) {
-    const target = document.querySelector(this.getAttribute('href'));
-    if (!target) return;
-
-    e.preventDefault();
-    target.scrollIntoView({
-        behavior: 'auto',
-        block: 'start'
+    document.querySelectorAll('.gallery-card, .event-card').forEach((element, index) => {
+        element.style.animationDelay = `${Math.min(index * 80, 420)}ms`;
+        observer.observe(element);
     });
-    target.focus({ preventScroll: true });
-});
-
-// Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]:not(.skip-link)').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (!target) return;
-
-        e.preventDefault();
-        target.scrollIntoView({
-            behavior: getScrollBehavior(),
-            block: 'start'
-        });
-        // Close mobile menu if open
-        const nav = document.getElementById('nav');
-        if (nav) {
-            nav.classList.remove('nav-open');
-            const toggle = document.querySelector('.menu-toggle');
-            if (toggle) {
-                toggle.classList.remove('active');
-                toggle.setAttribute('aria-expanded', 'false');
-            }
-        }
-    });
-});
-
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.animation = 'fadeInUp 0.8s ease-out forwards';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe gallery cards and event cards
-document.addEventListener('DOMContentLoaded', () => {
-    document.querySelectorAll('.gallery-card, .event-card').forEach((el, index) => {
-        el.style.animationDelay = `${Math.min(index * 80, 420)}ms`;
-        observer.observe(el);
-    });
-});
+}
