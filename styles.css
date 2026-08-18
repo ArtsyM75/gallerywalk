@@ -1256,9 +1256,8 @@ nav a::after {
 }
 
 .about-content {
-  align-items: start;
-  grid-template-columns: minmax(0, 0.8fr) minmax(420px, 1.2fr);
-  gap: 7rem;
+  display: block;
+  max-width: 920px;
 }
 
 .about-text h2,
@@ -1355,9 +1354,45 @@ nav a::after {
 }
 
 .gallery-grid {
-  counter-reset: gallery;
+  --rail-width: 64px;
+  --street-width: 130px;
   display: block;
   margin: 0;
+  padding-top: 4rem;
+  position: relative;
+}
+
+.gallery-grid::before {
+  background: var(--ink);
+  bottom: 1.5rem;
+  content: "";
+  left: calc(var(--street-width) + (var(--rail-width) / 2) - 2px);
+  position: absolute;
+  top: 2.8rem;
+  width: 4px;
+}
+
+.route-start {
+  display: grid;
+  font-size: 0.78rem;
+  font-weight: 700;
+  grid-template-columns: var(--street-width) var(--rail-width) minmax(0, 1fr);
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.route-start > span:last-child {
+  grid-column: 1;
+  text-align: right;
+}
+
+.route-north {
+  color: var(--coral);
+  grid-column: 2;
+  grid-row: 1;
+  text-align: center;
 }
 
 .gallery-card {
@@ -1366,10 +1401,9 @@ nav a::after {
   border-radius: 0;
   border-top: 1px solid var(--line);
   box-shadow: none;
-  counter-increment: gallery;
   display: grid;
-  gap: 2.5rem;
-  grid-template-columns: 42px minmax(0, 1fr);
+  gap: 0;
+  grid-template-columns: var(--street-width) var(--rail-width) minmax(0, 1fr);
   min-height: 0;
   padding: 2rem 0;
   position: relative;
@@ -1381,10 +1415,54 @@ nav a::after {
 }
 
 .gallery-card::before {
-  content: "0" counter(gallery);
-  font-size: 0.72rem;
+  content: none;
+}
+
+.gallery-cross-street {
+  align-self: start;
+  font-size: 0.76rem !important;
   font-weight: 700;
-  padding-top: 0.25rem;
+  grid-column: 1;
+  margin: 0 !important;
+  padding: 0.35rem 1rem 0 0;
+  text-align: right;
+}
+
+.gallery-marker {
+  align-self: start;
+  background: var(--coral);
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  grid-column: 2;
+  height: 28px;
+  justify-self: center;
+  position: relative;
+  width: 28px;
+  z-index: 2;
+}
+
+.gallery-maud .gallery-marker {
+  background: #0b7a75;
+}
+
+.gallery-bearclaw .gallery-marker {
+  background: var(--coral);
+}
+
+.gallery-lando .gallery-marker {
+  background: #78a94b;
+}
+
+.gallery-west-end .gallery-marker {
+  background: var(--aqua);
+}
+
+.gallery-peter-robertson .gallery-marker {
+  background: #ec78aa;
+}
+
+.gallery-bugera-lamb .gallery-marker {
+  background: #6b338e;
 }
 
 .gallery-card:hover,
@@ -1399,6 +1477,8 @@ nav a::after {
   grid-template-columns: minmax(0, 1fr) minmax(240px, 0.8fr);
   grid-template-rows: auto 1fr auto;
   column-gap: 2rem;
+  grid-column: 3;
+  padding-left: 1.5rem;
 }
 
 .gallery-card h3 {
@@ -1453,6 +1533,31 @@ nav a::after {
   color: var(--coral);
   opacity: 1;
   transform: none;
+}
+
+.route-name {
+  background: var(--paper);
+  font-size: 0.7rem;
+  font-weight: 700;
+  left: calc(var(--street-width) + (var(--rail-width) / 2) - 0.65rem);
+  margin: 0;
+  padding: 0.5rem 0;
+  position: absolute;
+  top: 48%;
+  writing-mode: vertical-rl;
+  z-index: 3;
+}
+
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
 }
 
 .events {
@@ -1649,9 +1754,13 @@ footer .social-links a {
     margin-top: 1.5rem;
   }
 
+  .gallery-grid {
+    --rail-width: 50px;
+    --street-width: 90px;
+  }
+
   .gallery-card {
-    grid-template-columns: 32px minmax(0, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: var(--street-width) var(--rail-width) minmax(0, 1fr);
   }
 }
 
@@ -1716,12 +1825,30 @@ footer .social-links a {
     font-size: 2.65rem;
   }
 
+  .gallery-grid {
+    --rail-width: 42px;
+    --street-width: 68px;
+  }
+
   .gallery-card {
-    grid-template-columns: 28px minmax(0, 1fr);
+    grid-template-columns: var(--street-width) var(--rail-width) minmax(0, 1fr);
+    padding: 1.5rem 0;
+  }
+
+  .gallery-cross-street {
+    font-size: 0.65rem !important;
+    padding-right: 0.5rem;
+  }
+
+  .gallery-marker {
+    border-width: 2px;
+    height: 22px;
+    width: 22px;
   }
 
   .gallery-card-content {
-    grid-column: 2;
+    grid-column: 3;
+    padding-left: 0.75rem;
   }
 
   .gallery-card h3 {

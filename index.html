@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./styles.css?v=20260818-1">
+    <link rel="stylesheet" href="./styles.css?v=20260818-2">
     <link rel="preload" href="./images/7680-Autumn.png" as="image" type="image/png" fetchpriority="high">
 </head>
 
@@ -114,45 +114,6 @@
                         <p>Two official unguided walks take place each year — Spring and Fall — bringing together art enthusiasts, collectors, and curious visitors to meet local creators and discover local, provincial, and Canadian contemporary art. Member galleries also welcome visitors year-round with regular exhibitions and special events.</p>
                     </div>
 
-                    <details class="map-details">
-                        <summary>View Gallery Walk map and location key</summary>
-
-                        <figure class="about-image">
-                            <div
-                                class="map-image-viewport"
-                                role="region"
-                                aria-label="Scrollable Gallery Walk map"
-                                tabindex="0"
-                            >
-                                <img
-                                    src="./images/gallery-walk-map.svg"
-                                    width="800"
-                                    height="1200"
-                                    alt="Simplified map of six member galleries along Edmonton's 124 Street, from Jasper Avenue north to 107 Avenue"
-                                    aria-describedby="map-caption"
-                                    loading="lazy"
-                                    decoding="async"
-                                >
-                            </div>
-
-                            <figcaption id="map-caption">
-                                <strong>Map key</strong>
-
-                                <ol class="map-key">
-                                    <li>MAUD Gallery</li>
-                                    <li>Bearclaw Gallery</li>
-                                    <li>Lando Gallery</li>
-                                    <li>West End Gallery</li>
-                                    <li>Peter Robertson Gallery</li>
-                                    <li>Bugera Lamb Gallery</li>
-                                </ol>
-
-                                <a class="map-open-link" href="./images/gallery-walk-map.svg">
-                                    Open full-size map
-                                </a>
-                            </figcaption>
-                        </figure>
-                    </details>
                 </div>
             </div>
         </section>
@@ -165,41 +126,15 @@
                     <p>Contemporary, traditional, and Indigenous art, all within a walkable stretch of 124 Street.</p>
                 </div>
 
-                <div class="gallery-grid">
-                    <article class="gallery-card">
-                        <div class="gallery-card-content">
-                            <h3>Bearclaw Gallery</h3>
-                            <p class="gallery-address">10403 124 Street NW, Edmonton, AB</p>
-                            <p>Celebrating fifty years in Canadian art, Bearclaw is an iconic stop honouring First Nations, Métis, and Inuit art through painting, sculpture, beadwork, and jewellery.</p>
-                            <a href="https://bearclawgallery.com/" class="gallery-link">
-                                Visit Bearclaw Gallery →
-                            </a>
-                        </div>
-                    </article>
+                <div class="gallery-grid" aria-label="Galleries ordered north to south along 124 Street">
+                    <div class="route-start" aria-hidden="true">
+                        <span class="route-north">N ↑</span>
+                        <span>107 Ave</span>
+                    </div>
 
-                    <article class="gallery-card">
-                        <div class="gallery-card-content">
-                            <h3>Bugera Lamb Gallery</h3>
-                            <p class="gallery-address">10110 124 St #1b, Edmonton, AB</p>
-                            <p>A carefully curated selection of contemporary works from artists across Canada, contributing to Edmonton's art scene since 1992.</p>
-                            <a href="https://bugeralambart.ca/" class="gallery-link">
-                                Visit Bugera Lamb Gallery →
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="gallery-card">
-                        <div class="gallery-card-content">
-                            <h3>Lando Gallery</h3>
-                            <p class="gallery-address">10345 124 Street NW, Edmonton, AB</p>
-                            <p>Showcasing a wide range of artistic styles, from classical realism to contemporary abstracts, with works by recognized Canadian and international fine artists.</p>
-                            <a href="https://www.landogallery.com/" class="gallery-link">
-                                Visit Lando Gallery →
-                            </a>
-                        </div>
-                    </article>
-
-                    <article class="gallery-card">
+                    <article class="gallery-card gallery-maud">
+                        <p class="gallery-cross-street">106 Ave</p>
+                        <span class="gallery-marker" aria-hidden="true"></span>
                         <div class="gallery-card-content">
                             <h3>MAUD Gallery</h3>
                             <p class="gallery-address">10643 124 Street NW #307, Edmonton, AB</p>
@@ -210,7 +145,48 @@
                         </div>
                     </article>
 
-                    <article class="gallery-card">
+                    <article class="gallery-card gallery-bearclaw">
+                        <p class="gallery-cross-street">104 Ave</p>
+                        <span class="gallery-marker" aria-hidden="true"></span>
+                        <div class="gallery-card-content">
+                            <h3>Bearclaw Gallery</h3>
+                            <p class="gallery-address">10403 124 Street NW, Edmonton, AB</p>
+                            <p>Celebrating fifty years in Canadian art, Bearclaw is an iconic stop honouring First Nations, Métis, and Inuit art through painting, sculpture, beadwork, and jewellery.</p>
+                            <a href="https://bearclawgallery.com/" class="gallery-link">
+                                Visit Bearclaw Gallery →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card gallery-lando">
+                        <p class="gallery-cross-street">103 Ave</p>
+                        <span class="gallery-marker" aria-hidden="true"></span>
+                        <div class="gallery-card-content">
+                            <h3>Lando Gallery</h3>
+                            <p class="gallery-address">10345 124 Street NW, Edmonton, AB</p>
+                            <p>Showcasing a wide range of artistic styles, from classical realism to contemporary abstracts, with works by recognized Canadian and international fine artists.</p>
+                            <a href="https://www.landogallery.com/" class="gallery-link">
+                                Visit Lando Gallery →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card gallery-west-end">
+                        <p class="gallery-cross-street"><span class="visually-hidden">Between 103 Avenue and Jasper Avenue</span></p>
+                        <span class="gallery-marker" aria-hidden="true"></span>
+                        <div class="gallery-card-content">
+                            <h3>West End Gallery</h3>
+                            <p class="gallery-address">10337 124 Street NW, Edmonton, AB</p>
+                            <p>Celebrating fifty years in Canadian art, West End Gallery proudly showcases local, provincial, and Canadian artists across contemporary and traditional styles.</p>
+                            <a href="https://www.westendgalleryltd.com" class="gallery-link">
+                                Visit West End Gallery →
+                            </a>
+                        </div>
+                    </article>
+
+                    <article class="gallery-card gallery-peter-robertson">
+                        <p class="gallery-cross-street"><span class="visually-hidden">Between 103 Avenue and Jasper Avenue</span></p>
+                        <span class="gallery-marker" aria-hidden="true"></span>
                         <div class="gallery-card-content">
                             <h3>Peter Robertson Gallery</h3>
                             <p class="gallery-address">10332 124 Street NW, Edmonton, AB</p>
@@ -221,16 +197,20 @@
                         </div>
                     </article>
 
-                    <article class="gallery-card">
+                    <article class="gallery-card gallery-bugera-lamb">
+                        <p class="gallery-cross-street">Jasper Ave</p>
+                        <span class="gallery-marker" aria-hidden="true"></span>
                         <div class="gallery-card-content">
-                            <h3>West End Gallery</h3>
-                            <p class="gallery-address">10337 124 Street NW, Edmonton, AB</p>
-                            <p>Celebrating fifty years in Canadian art, West End Gallery proudly showcases local, provincial, and Canadian artists across contemporary and traditional styles.</p>
-                            <a href="https://www.westendgalleryltd.com" class="gallery-link">
-                                Visit West End Gallery →
+                            <h3>Bugera Lamb Gallery</h3>
+                            <p class="gallery-address">10110 124 St #1b, Edmonton, AB</p>
+                            <p>A carefully curated selection of contemporary works from artists across Canada, contributing to Edmonton's art scene since 1992.</p>
+                            <a href="https://bugeralambart.ca/" class="gallery-link">
+                                Visit Bugera Lamb Gallery →
                             </a>
                         </div>
                     </article>
+
+                    <p class="route-name" aria-hidden="true">124 Street</p>
                 </div>
             </div>
         </section>
@@ -249,7 +229,7 @@
 
                         <div class="event-actions">
                             <a href="#galleries" class="event-link">Member Galleries</a>
-                            <a href="#about" class="event-link secondary">Map &amp; Neighbourhood</a>
+                            <a href="#about" class="event-link secondary">About the Neighbourhood</a>
                         </div>
                     </div>
 
