@@ -69,7 +69,7 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Headings use Playfair */
+/* Typography uses Open Sans throughout */
 h1,h2,h3 { 
   font-family: "Open Sans", sans-serif;
   color: #000000;
@@ -1052,7 +1052,8 @@ nav a {
   font-size: 0.78rem;
   min-height: 44px;
   padding: 0 0.8rem;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 nav a::after {
@@ -1099,15 +1100,15 @@ nav a::after {
   color: var(--coral);
   font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.12em;
+  letter-spacing: 0;
   margin: 0 0 1rem;
-  text-transform: uppercase;
+  text-transform: none;
 }
 
 .hero h1 {
   color: #ffffff;
   font-size: 8.5rem;
-  font-weight: 600;
+  font-weight: 700;
   line-height: 0.78;
   margin: 1rem 0 2.5rem;
   max-width: 900px;
@@ -1172,7 +1173,8 @@ nav a::after {
   font-weight: 700;
   margin-bottom: 0.35rem;
   padding: 0.15rem 0.35rem;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .hero-facts dd {
@@ -1211,7 +1213,8 @@ nav a::after {
   margin: 0;
   min-height: 46px;
   padding: 0.75rem 1rem;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .cta-button:hover,
@@ -1231,7 +1234,8 @@ nav a::after {
   grid-row: 2;
   min-height: 44px;
   text-decoration: none;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
   z-index: 3;
 }
 
@@ -1441,7 +1445,8 @@ nav a::after {
   margin: 1rem 0 0;
   min-height: 44px;
   padding: 0;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .gallery-link:hover {
@@ -1489,7 +1494,8 @@ nav a::after {
 .event-details dt {
   color: var(--coral);
   font-size: 0.68rem;
-  text-transform: uppercase;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .event-link {
