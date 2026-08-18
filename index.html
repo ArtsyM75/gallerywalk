@@ -13,18 +13,18 @@
     <meta property="og:description" content="Promoting Art and Artists in Edmonton's 124 Street Area since 1981">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://www.edmontongallerywalk.com/">
-    <meta property="og:image" content="https://www.edmontongallerywalk.com/images/gallery-walk-autumn.webp">
+    <meta property="og:image" content="https://www.edmontongallerywalk.com/images/7680-Autumn.png">
     <meta property="og:image:alt" content="An illustrated autumn walk past galleries on Edmonton's 124 Street">
 
     <link rel="canonical" href="https://www.edmontongallerywalk.com/">
-    <link rel="icon" type="image/png" href="./images/favicon.png">
+    <link rel="icon" type="image/png" href="./images/7680-Autumn.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./styles.css">
-    <link rel="preload" href="./images/gallery-walk-autumn.webp" as="image" type="image/webp" fetchpriority="high">
+    <link rel="preload" href="./images/7680-Autumn.png" as="image" type="image/png" fetchpriority="high">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
         <div class="container">
             <div class="header-content">
                 <a href="#main" class="logo" aria-label="Edmonton Gallery Walk home">
-                    <img src="./images/gallery-walk-logo.webp" alt="" width="192" height="80">
+                    <span class="logo-mark" aria-hidden="true">GW</span>
                     <span class="logo-title">Gallery Walk</span>
                 </a>
 
@@ -65,23 +65,46 @@
 
     <main id="main" tabindex="-1">
         <section class="hero">
-            <div class="container">
-                <p class="hero-kicker">Gallery Walk Weekend</p>
-                <h1>Edmonton Gallery Walk</h1>
-                <p class="hero-date">September 19 &amp; 20, 2026</p>
-                <p class="hero-lead">Meet the member galleries, explore new exhibitions, and spend a fall weekend with art and culture in the heart of the 124 Street area.</p>
+            <div class="container hero-layout">
+                <div class="hero-copy">
+                    <p class="hero-kicker">124 Street · Edmonton</p>
+                    <h1><span>Gallery</span> <span>Walk</span></h1>
+                    <p class="hero-lead">Meet the member galleries, explore new exhibitions, and spend a fall weekend with art and culture in the heart of the 124 Street area.</p>
 
-                <div class="hero-actions">
-                    <a href="#galleries" class="cta-button">Explore Galleries</a>
-                    <a href="#events" class="cta-button secondary">View Event Details</a>
+                    <div class="hero-actions">
+                        <a href="#galleries" class="cta-button">Explore galleries <span aria-hidden="true">↘</span></a>
+                    </div>
                 </div>
-            </div>
+
+                <figure class="hero-art">
+                    <img src="./images/7680-Autumn.png" alt="Illustrated autumn walk through Edmonton's gallery district" width="1152" height="768">
+                </figure>
+
+                <dl class="hero-facts" aria-label="Fall Gallery Walk summary">
+                    <div>
+                        <dt>When</dt>
+                        <dd>September 19 &amp; 20</dd>
+                    </div>
+                    <div>
+                        <dt>Where</dt>
+                        <dd>124 Street, Edmonton</dd>
+                    </div>
+                    <div>
+                        <dt>Admission</dt>
+                        <dd>Free</dd>
+                    </div>
+                </dl>
+
+                <p class="hero-year" aria-label="2026">2026</p>
+                <a href="#about" class="hero-scroll">Discover the walk <span aria-hidden="true">↓</span></a>
+                </div>
         </section>
 
         <section id="about" class="about">
             <div class="container">
                 <div class="about-content">
                     <div class="about-text">
+                        <p class="section-kicker">Since 1981</p>
                         <h2>About Edmonton Gallery Walk</h2>
 
                         <p>Since 1981, the Edmonton Gallery Walk has been a cornerstone of the city's vibrant arts community, promoting Canadian artists and fostering cultural enrichment.</p>
@@ -136,10 +159,17 @@
 
         <section id="galleries" class="galleries">
             <div class="container">
-                <h2>Member Galleries</h2>
+                <div class="section-heading">
+                    <p class="section-kicker">Six independent spaces</p>
+                    <h2>Member Galleries</h2>
+                    <p>Contemporary, traditional, and Indigenous art, all within a walkable stretch of 124 Street.</p>
+                </div>
 
                 <div class="gallery-grid">
                     <article class="gallery-card">
+                        <figure class="gallery-media">
+                            <img src="./images/7680-Autumn.png" alt="Illustrated autumn walk through the gallery district" loading="lazy" width="1152" height="768">
+                        </figure>
                         <div class="gallery-card-content">
                             <h3>Bearclaw Gallery</h3>
                             <p class="gallery-address">10403 124 Street NW, Edmonton, AB</p>
@@ -151,6 +181,9 @@
                     </article>
 
                     <article class="gallery-card">
+                        <figure class="gallery-media">
+                            <img src="./images/JpgShoe.jpg" alt="Painted shoe celebrating the spring Gallery Walk" loading="lazy" width="800" height="475">
+                        </figure>
                         <div class="gallery-card-content">
                             <h3>Bugera Lamb Gallery</h3>
                             <p class="gallery-address">10110 124 St #1b, Edmonton, AB</p>
@@ -162,6 +195,9 @@
                     </article>
 
                     <article class="gallery-card">
+                        <figure class="gallery-media">
+                            <img src="./images/7680-Summer.png" alt="Illustrated summer walk through the gallery district" loading="lazy" width="1152" height="768">
+                        </figure>
                         <div class="gallery-card-content">
                             <h3>Lando Gallery</h3>
                             <p class="gallery-address">10345 124 Street NW, Edmonton, AB</p>
@@ -173,6 +209,9 @@
                     </article>
 
                     <article class="gallery-card">
+                        <figure class="gallery-media">
+                            <img src="./images/ShoeREVTYPE.jpg" alt="Painted shoe depicting a walk toward art" loading="lazy" width="800" height="334">
+                        </figure>
                         <div class="gallery-card-content">
                             <h3>MAUD Gallery</h3>
                             <p class="gallery-address">10643 124 Street NW #307, Edmonton, AB</p>
@@ -184,6 +223,9 @@
                     </article>
 
                     <article class="gallery-card">
+                        <figure class="gallery-media">
+                            <img src="./images/7680-Winter.png" alt="Illustrated winter walk through the gallery district" loading="lazy" width="1152" height="768">
+                        </figure>
                         <div class="gallery-card-content">
                             <h3>Peter Robertson Gallery</h3>
                             <p class="gallery-address">10332 124 Street NW, Edmonton, AB</p>
@@ -195,6 +237,9 @@
                     </article>
 
                     <article class="gallery-card">
+                        <figure class="gallery-media">
+                            <img src="./images/WestEndGallery_800x.webp" alt="Storefront of West End Gallery" loading="lazy" width="800" height="800">
+                        </figure>
                         <div class="gallery-card-content">
                             <h3>West End Gallery</h3>
                             <p class="gallery-address">10337 124 Street NW, Edmonton, AB</p>
@@ -210,6 +255,7 @@
 
         <section id="events" class="events">
             <div class="container">
+                <p class="section-kicker">Save the date</p>
                 <h2>Upcoming Events</h2>
 
                 <div class="event-card event-feature">
@@ -247,6 +293,7 @@
 
         <section id="contact" class="contact">
             <div class="container">
+                <p class="section-kicker">Keep walking</p>
                 <h2>Contact Us</h2>
                 <p>For more information about the Edmonton Gallery Walk, please reach out to any of our member galleries or follow us on social media.</p>
 
