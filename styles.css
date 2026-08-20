@@ -1074,9 +1074,22 @@ nav a::after {
   text-align: left;
 }
 
-.hero::before,
+.hero::before {
+  background:
+    linear-gradient(90deg, transparent 0 74%, rgba(255, 255, 255, 0.07) 74% 74.1%, transparent 74.1%),
+    linear-gradient(0deg, transparent 0 78%, rgba(255, 255, 255, 0.07) 78% 78.15%, transparent 78.15%);
+  display: block;
+  inset: 0;
+}
+
 .hero::after {
-  display: none;
+  background: var(--coral);
+  bottom: 12%;
+  display: block;
+  height: 2px;
+  left: 46%;
+  right: -8%;
+  transform: rotate(-6deg);
 }
 
 .hero-layout {
@@ -1089,7 +1102,7 @@ nav a::after {
 
 .hero-copy {
   align-self: start;
-  grid-column: 1 / 3;
+  grid-column: 1;
   grid-row: 1;
   position: relative;
   z-index: 2;
@@ -1119,13 +1132,16 @@ nav a::after {
 
 .hero h1 span {
   display: block;
+  animation: hero-title-in 700ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
 }
 
 .hero h1 span:last-child {
+  animation-delay: 90ms;
   margin-left: 1.15em;
 }
 
 .hero .hero-lead {
+  animation: hero-detail-in 650ms 280ms ease-out both;
   color: rgba(255, 255, 255, 0.82);
   font-size: 1rem;
   line-height: 1.5;
@@ -1135,6 +1151,7 @@ nav a::after {
 }
 
 .hero-art {
+  animation: hero-art-in 900ms 140ms cubic-bezier(0.2, 0.75, 0.2, 1) both;
   align-self: center;
   grid-column: 2 / 4;
   grid-row: 1 / 3;
@@ -1152,6 +1169,7 @@ nav a::after {
 }
 
 .hero-facts {
+  animation: hero-detail-in 650ms 420ms ease-out both;
   align-self: start;
   grid-column: 3;
   grid-row: 1;
@@ -1162,7 +1180,9 @@ nav a::after {
 }
 
 .hero-facts div {
+  border-right: 2px solid rgba(240, 100, 59, 0.7);
   margin-bottom: 1.6rem;
+  padding-right: 0.75rem;
 }
 
 .hero-facts dt {
@@ -1185,6 +1205,7 @@ nav a::after {
 }
 
 .hero-year {
+  animation: hero-detail-in 650ms 520ms ease-out both;
   align-self: end;
   font-size: 6.5rem;
   font-weight: 600;
@@ -1197,6 +1218,7 @@ nav a::after {
 }
 
 .hero-actions {
+  animation: hero-detail-in 650ms 360ms ease-out both;
   justify-content: flex-start;
   margin-top: 1.25rem;
 }
@@ -1242,6 +1264,27 @@ nav a::after {
 .hero-scroll span {
   color: var(--coral);
   margin-left: 0.5rem;
+}
+
+@keyframes hero-title-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+}
+
+@keyframes hero-art-in {
+  from {
+    opacity: 0;
+    transform: translate(5rem, 2rem) rotate(2deg) scale(0.94);
+  }
+}
+
+@keyframes hero-detail-in {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
 }
 
 .about,
@@ -1670,8 +1713,16 @@ footer .social-links a {
 }
 
 @media (max-width: 1100px) {
+  .hero-layout {
+    grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr) minmax(180px, 0.42fr);
+  }
+
   .hero h1 {
     font-size: 6rem;
+  }
+
+  .hero-art {
+    margin-left: -3rem;
   }
 
   .hero-year {
@@ -1772,6 +1823,15 @@ footer .social-links a {
 }
 
 @media (max-width: 640px) {
+  .hero::before {
+    background: linear-gradient(90deg, transparent 0 88%, rgba(255, 255, 255, 0.08) 88% 88.3%, transparent 88.3%);
+  }
+
+  .hero::after {
+    bottom: 30%;
+    left: 22%;
+  }
+
   .hero-layout {
     display: flex;
     min-height: 0;
@@ -1792,8 +1852,14 @@ footer .social-links a {
   }
 
   .hero-art {
-    margin: -1rem -4rem -2rem;
+    aspect-ratio: 3 / 2;
+    margin: -1rem -4rem 0.75rem;
     order: 2;
+  }
+
+  .hero-art img {
+    height: 100%;
+    object-fit: contain;
   }
 
   .hero-facts {
@@ -1806,7 +1872,10 @@ footer .social-links a {
   }
 
   .hero-facts div {
+    border-bottom: 2px solid rgba(240, 100, 59, 0.7);
+    border-right: 0;
     margin: 0;
+    padding: 0 0 0.65rem;
   }
 
   .hero-facts dd {

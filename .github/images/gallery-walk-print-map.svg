@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="11in" height="17in" viewBox="0 0 3300 5100" role="img" aria-labelledby="title description">
+  <title id="title">Fall Edmonton Gallery Walk 2026 poster</title>
+  <desc id="description">An 11 by 17 inch promotional poster featuring autumn artwork and a route map for six galleries on Edmonton's 124 Street.</desc>
+
+  <rect width="3300" height="5100" fill="#FFFDF6"/>
+
+  <rect width="3300" height="1120" fill="#111111"/>
+  <g font-family="Open Sans, Arial, sans-serif">
+    <text x="180" y="170" fill="#F0643B" font-size="52" font-weight="800">EDMONTON · 124 STREET</text>
+    <text x="180" y="340" fill="#F0643B" font-size="82" font-weight="800">FALL</text>
+    <text x="180" y="650" fill="#FFFDF6" font-size="278" font-weight="800">GALLERY</text>
+    <text x="650" y="930" fill="#FFFDF6" font-size="278" font-weight="800">WALK</text>
+    <text x="185" y="1050" fill="#FFFDF6" font-size="42" font-weight="600">SIX GALLERIES · ONE WALKABLE ARTS DISTRICT · SINCE 1981</text>
+  </g>
+
+  <g transform="translate(2350 220)" font-family="Open Sans, Arial, sans-serif">
+    <rect width="770" height="720" fill="#F0643B"/>
+    <text x="60" y="100" fill="#111111" font-size="46" font-weight="800">SEPTEMBER</text>
+    <text x="45" y="350" fill="#111111" font-size="235" font-weight="800">19</text>
+    <text x="350" y="330" fill="#111111" font-size="88" font-weight="700">+</text>
+    <text x="455" y="350" fill="#111111" font-size="235" font-weight="800">20</text>
+    <text x="60" y="455" fill="#111111" font-size="62" font-weight="800">2026</text>
+    <path d="M60 510H710" stroke="#111111" stroke-width="7"/>
+    <text x="60" y="585" fill="#111111" font-size="34" font-weight="700">SATURDAY · GALLERY HOURS</text>
+    <text x="60" y="645" fill="#111111" font-size="34" font-weight="700">SUNDAY · NOON–4 PM</text>
+  </g>
+
+  <rect y="1120" width="3300" height="2200" fill="#FFFFFF"/>
+  <image x="0" y="1120" width="3300" height="2200" href="https://www.edmontongallerywalk.com/images/7680-Autumn.png" xlink:href="https://www.edmontongallerywalk.com/images/7680-Autumn.png" preserveAspectRatio="xMidYMid meet"/>
+
+  <g transform="translate(180 2910)" font-family="Open Sans, Arial, sans-serif">
+    <rect width="1040" height="190" fill="#F0643B"/>
+    <text x="55" y="82" fill="#111111" font-size="44" font-weight="800">FREE · SELF-GUIDED</text>
+    <text x="55" y="140" fill="#111111" font-size="32" font-weight="700">OPEN TO EVERYONE</text>
+  </g>
+
+  <rect x="120" y="3160" width="3060" height="1420" fill="#111111" stroke="#F0643B" stroke-width="10"/>
+  <g font-family="Open Sans, Arial, sans-serif">
+    <text x="230" y="3340" fill="#FFFDF6" font-size="72" font-weight="800">WALK THE GALLERIES</text>
+    <text x="3050" y="3330" fill="#F0643B" font-size="34" font-weight="700" text-anchor="end">NORTH → SOUTH</text>
+  </g>
+
+  <path d="M690 3430V4460" stroke="#FFFDF6" stroke-width="14"/>
+  <g fill="none" stroke="#77766F" stroke-width="4">
+    <path d="M420 3435H690"/>
+    <path d="M420 3590H690"/>
+    <path d="M420 3760H690"/>
+    <path d="M420 3940H690"/>
+    <path d="M420 4300H690"/>
+  </g>
+  <g fill="#FFFDF6" font-family="Open Sans, Arial, sans-serif" font-size="30" font-weight="700">
+    <text x="390" y="3445" text-anchor="end">107 AVE</text>
+    <text x="390" y="3600" text-anchor="end">106 AVE</text>
+    <text x="390" y="3770" text-anchor="end">104 AVE</text>
+    <text x="390" y="3950" text-anchor="end">103 AVE</text>
+    <text x="390" y="4310" text-anchor="end">JASPER AVE</text>
+    <text x="580" y="4190" fill="#F0643B" font-size="32" font-weight="800" text-anchor="middle" transform="rotate(-90 580 4190)">124 STREET</text>
+  </g>
+
+  <g font-family="Open Sans, Arial, sans-serif">
+    <g transform="translate(690 3505)">
+      <circle r="36" fill="#0B7A75" stroke="#FFFDF6" stroke-width="7"/>
+      <text x="90" y="-2" fill="#FFFDF6" font-size="50" font-weight="800">MAUD Gallery</text>
+      <text x="90" y="44" fill="#C9C6BC" font-size="27" font-weight="600">#307, 10643 124 Street NW</text>
+    </g>
+    <g transform="translate(690 3670)">
+      <circle r="36" fill="#F0643B" stroke="#FFFDF6" stroke-width="7"/>
+      <text x="90" y="-2" fill="#FFFDF6" font-size="50" font-weight="800">Bearclaw Gallery</text>
+      <text x="90" y="44" fill="#C9C6BC" font-size="27" font-weight="600">10403 124 Street NW</text>
+    </g>
+    <g transform="translate(690 3840)">
+      <circle r="36" fill="#78A94B" stroke="#FFFDF6" stroke-width="7"/>
+      <text x="90" y="-2" fill="#FFFDF6" font-size="50" font-weight="800">Lando Gallery</text>
+      <text x="90" y="44" fill="#C9C6BC" font-size="27" font-weight="600">10345 124 Street NW</text>
+    </g>
+    <g transform="translate(690 4020)">
+      <circle r="36" fill="#57C9C3" stroke="#FFFDF6" stroke-width="7"/>
+      <text x="90" y="-2" fill="#FFFDF6" font-size="50" font-weight="800">West End Gallery</text>
+      <text x="90" y="44" fill="#C9C6BC" font-size="27" font-weight="600">10337 124 Street NW</text>
+    </g>
+    <g transform="translate(690 4190)">
+      <circle r="36" fill="#EC78AA" stroke="#FFFDF6" stroke-width="7"/>
+      <text x="90" y="-2" fill="#FFFDF6" font-size="50" font-weight="800">Peter Robertson Gallery</text>
+      <text x="90" y="44" fill="#C9C6BC" font-size="27" font-weight="600">10332 124 Street NW</text>
+    </g>
+    <g transform="translate(690 4390)">
+      <circle r="36" fill="#6B338E" stroke="#FFFDF6" stroke-width="7"/>
+      <text x="90" y="-2" fill="#FFFDF6" font-size="50" font-weight="800">Bugera Lamb Gallery</text>
+      <text x="90" y="44" fill="#C9C6BC" font-size="27" font-weight="600">1B, 10110 124 Street NW</text>
+    </g>
+  </g>
+
+  <g font-family="Open Sans, Arial, sans-serif">
+    <text x="180" y="4760" fill="#111111" font-size="76" font-weight="800">EDMONTONGALLERYWALK.COM</text>
+    <text x="180" y="4870" fill="#F0643B" font-size="40" font-weight="800">ART · EXHIBITIONS · 124 STREET</text>
+    <text x="180" y="4990" fill="#111111" font-size="28">Map not to scale</text>
+    <text x="3120" y="4990" fill="#111111" font-size="34" font-weight="700" text-anchor="end">EDMONTON, ALBERTA</text>
+  </g>
+</svg>
