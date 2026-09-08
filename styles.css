@@ -224,9 +224,7 @@ nav a:hover::after {
 .hero {
     padding: 7rem 0 6.5rem;
     text-align: left;
-    background:
-      linear-gradient(90deg, rgba(3, 34, 33, 0.86) 0%, rgba(6, 66, 63, 0.72) 48%, rgba(8, 95, 91, 0.38) 100%),
-      url("./images/7680-Autumn.png") center / cover no-repeat;
+  background: linear-gradient(90deg, #032221 0%, #06423f 52%, #08706b 100%);
     color: white;
     position: relative;
     overflow: hidden;
@@ -579,9 +577,7 @@ nav a:hover::after {
 /* Events Section */
 .events {
   padding: 5rem 0;
-  background:
-    linear-gradient(135deg, rgba(247, 243, 234, 0.96), rgba(255, 253, 248, 0.98)),
-    url("./images/7680-Autumn.png") center bottom / min(760px, 90%) auto no-repeat;
+  background: linear-gradient(135deg, rgba(247, 243, 234, 0.96), rgba(255, 253, 248, 0.98));
 }
 
 .events h2 {
